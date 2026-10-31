@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' https://raw.githubusercontent.com https://*.githubusercontent.com data: blob:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -161,8 +161,10 @@ h3{font-size:clamp(2rem,3.5vw,3.5rem);line-height:.9;margin:7px 0 12px}
 .dialog-copy .close:hover{background:var(--ink);color:var(--paper)}
 .review-body{white-space:pre-wrap;color:#4f4646}
 .dialog-quote{border-left:3px solid var(--gold);padding-left:17px;font-family:var(--serif);font-size:1.5rem;line-height:1.1;margin-top:28px}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
+/* Keep content visible if JavaScript or the reveal observer is unavailable. */
+.reveal{opacity:1;transform:none}
+.js-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0)}
 .hidden{display:none!important}
 .toast{position:fixed;right:16px;bottom:16px;background:var(--ink);color:var(--paper);padding:11px 14px;font:12px var(--mono);display:none;z-index:40}
 @media(max-width:900px){
@@ -720,22 +722,36 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
   }
 }
 @media(max-width:700px){
+  #reviewList{grid-template-columns:1fr;gap:14px}
   #reviewList .review-stage,
   #reviewList .review-stage.reverse{
-    grid-template-columns:110px minmax(0,1fr);
-    padding:13px;
-    gap:14px;
+    grid-template-columns:minmax(0,1fr);
+    padding:14px;
+    gap:15px;
   }
-  #reviewList .poster-wrap{height:175px}
-  #reviewList .review-excerpt{-webkit-line-clamp:3;font-size:.9rem}
+  #reviewList .poster-wrap{height:clamp(210px,62vw,280px);width:100%}
+  #reviewList .poster{height:100%;min-height:0}
+  #reviewList .poster img{object-fit:contain}
+  #reviewList .review-copy{padding:2px 2px 4px}
+  #reviewList .review-excerpt{
+    -webkit-line-clamp:4;
+    font-size:.98rem;
+    line-height:1.55;
+  }
   #reviewList .review-number{display:none}
-  #reviewList .review-title{font-size:1.65rem}
+  #reviewList .review-title{font-size:clamp(1.8rem,8vw,2.35rem);line-height:.98}
+  #reviewList .review-copy .read-link{margin-top:12px}
   #obsessions .obsession-board{grid-template-columns:1fr}
   #obsessions .obsession-label{display:none}
+  .obsession-playlist-head{flex-direction:column;gap:8px}
   .journal-bottom .journal-card{
     min-height:145px!important;
     padding:28px 58px 32px 5%!important;
   }
+  .dialog{width:100%;max-height:94dvh}
+  .dialog-image{min-height:0;height:34dvh}
+  .dialog-copy{padding:52px 20px 28px}
+  .review-body{overflow-wrap:anywhere}
 }
 
 </style>
@@ -1200,6 +1216,7 @@ async function load(){
   renderObsessions(d);
   renderFuture(d);
   renderJournalShelf(d);
+  document.body.classList.add('js-ready');
   observeReveals();
 })();
 </script>
