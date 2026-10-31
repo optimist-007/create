@@ -10,7 +10,6 @@
     "marginAccent": "Just the things that refused to leave."
   },
   "navigation": {
-    "researchLabel": "Research ↗",
     "reviewsLabel": "Reviews",
     "quotesLabel": "Quotes",
     "nowLabel": "Now",
@@ -71,9 +70,7 @@
   },
   "footer": {
     "left": "Made for things that linger.",
-    "middle": "Films · books · stories · visual scraps · whatever comes next.",
-    "researchLabel": "Back to research ↗",
-    "researchUrl": "https://optimist-007.github.io/"
+    "middle": "Films · books · stories · visual scraps · whatever comes next."
   },
   "design": {
     "baseFontSize": 16,
@@ -117,10 +114,6 @@
     "comments"
   ],
   "nav": [
-    {
-      "label": "Research ↗",
-      "href": "https://optimist-007.github.io/"
-    },
     {
       "label": "Reviews",
       "href": "#reviews"
