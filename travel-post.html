@@ -41,7 +41,7 @@ function render(data,slug){
  document.title=p.title+" · Travel Diaries";
  const cover=imgPath(p.cover),gallery=Array.isArray(p.gallery)?p.gallery.filter(g=>imgPath(g.src)):[];
  root.innerHTML='<header class="head"><div class="meta">'+esc([p.date,p.locations].filter(Boolean).join(" · "))+'</div><h1>'+esc(p.title)+'</h1></header>'+
- (cover?'<figure class="cover"><img src="'+esc(cover)+'" alt="'+esc(p.coverAlt||p.title)+'"></figure>':"")+
+ (cover?'<figure class="cover" role="img" aria-label="'+esc(p.coverAlt||p.title)+'"><img src="'+esc(cover)+'" alt="" onerror="this.remove()"></figure>':"")+
  '<article class="story">'+(p.body||[]).map(blockHtml).join("")+'</article>'+
  (gallery.length?'<section class="gallery" aria-label="Travel photographs">'+gallery.map(g=>'<figure><img src="'+esc(imgPath(g.src))+'" alt="'+esc(g.alt||"Travel photograph")+'">'+(g.caption?'<figcaption>'+esc(g.caption)+'</figcaption>':"")+'</figure>').join("")+'</section>':"");
 }
