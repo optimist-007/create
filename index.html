@@ -209,6 +209,19 @@ h3{font-size:clamp(2rem,3.5vw,3.5rem);line-height:.9;margin:7px 0 12px}
 .media-entry audio{width:100%;margin-top:15px}
 @media(max-width:760px){.media-shelf{grid-template-columns:1fr}}
 
+.travel-diary-section{padding-top:clamp(64px,9vw,120px);padding-bottom:clamp(64px,9vw,120px)}
+.travel-diary-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:clamp(22px,4vw,54px);align-items:center;background:var(--paper-2);border:1px solid var(--line);padding:clamp(16px,3vw,34px);box-shadow:var(--shadow);cursor:pointer}
+.travel-diary-cover{position:relative;min-height:320px;aspect-ratio:16/10;background:linear-gradient(145deg,#b9dce0,#e9d9bc 60%,#6d9d9e);overflow:hidden}
+.travel-diary-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.travel-diary-cover:after{content:"";position:absolute;inset:12px;border:1px solid rgba(255,255,255,.72);pointer-events:none}
+.travel-diary-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font:italic clamp(2rem,5vw,4rem)/.9 var(--serif);text-align:center;padding:25px;text-shadow:0 2px 18px rgba(0,0,0,.2)}
+.travel-diary-copy .eyebrow{margin-bottom:14px}
+.travel-diary-copy h3{font-size:clamp(2.4rem,4.5vw,4.4rem);line-height:.92}
+.travel-diary-copy p{color:var(--muted);max-width:560px}
+.travel-diary-copy .read-link{margin-top:12px}
+@media(max-width:760px){.travel-diary-card{grid-template-columns:1fr;gap:22px}.travel-diary-cover{min-height:220px;aspect-ratio:4/3}}
+
+
 .journal-bottom{
   position:relative;
   display:block;
@@ -285,10 +298,12 @@ h3{font-size:clamp(2rem,3.5vw,3.5rem);line-height:.9;margin:7px 0 12px}
 .journal-bottom .journal-shelf>h2,
 .journal-bottom .journal-shelf>p{display:none}
 .journal-bottom .media-shelf{
+  counter-reset:journalentry;
   display:block;
   margin:0
 }
 .journal-bottom .journal-card{
+  counter-increment:journalentry;
   position:relative;
   display:block;
   width:100%;
@@ -302,7 +317,7 @@ h3{font-size:clamp(2rem,3.5vw,3.5rem);line-height:.9;margin:7px 0 12px}
   transition:padding .35s ease
 }
 .journal-bottom .journal-card:before{
-  content:"01";
+  content:counter(journalentry, decimal-leading-zero);
   position:absolute;
   left:0;
   bottom:28px;
@@ -764,6 +779,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
       <div class="topnav">
         <a href="#reviews">Reviews</a>
         <a href="#obsessions">Now</a>
+        <a href="#travelDiaries">Travel diaries</a>
         <a href="#journalRandomThoughts">Journal</a>
         <a href="index.html#future">Stories</a>
       </div>
@@ -847,6 +863,14 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
 
 
 
+
+  <section class="section travel-diary-section" id="travelDiaries">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Out of office · into the blue</div><h2>Travel diaries.</h2></div>
+      <p class="section-kicker">Places, coastlines and little moments I want to keep.</p>
+    </div>
+    <div id="travelDiaryShelf"></div>
+  </section>
 
 </main>
 
@@ -1068,6 +1092,38 @@ function renderJournalShelf(d){
   });
 }
 
+function renderTravelDiaries(d){
+  const entries=Array.isArray(d.mediaEntries)
+    ? d.mediaEntries.filter(x=>x&&x.enabled!==false&&String(x.collection||'').toLowerCase()==='travel'&&String(x.text||'').trim())
+    : [];
+  const host=$('travelDiaryShelf');
+  if(!host)return;
+  host.innerHTML=entries.length ? entries.map(function(x){
+    const preview=String(x.text||'').split(/\s+/).slice(0,52).join(' ')+'…';
+    return '<article class="travel-diary-card reveal" tabindex="0" role="button" aria-label="Open '+esc(x.title||'Travel diary')+'" data-travel-title="'+esc(x.title||'Travel diary')+'">'+
+      '<div class="travel-diary-cover">'+(x.image?'<img src="'+esc(x.image)+'" alt="'+esc(x.alt||x.title||'Travel diary cover')+'" loading="lazy">':'<div class="travel-diary-placeholder">A little more<br>blue, please.</div>')+'</div>'+
+      '<div class="travel-diary-copy"><div class="eyebrow">'+esc(x.mediaType||'Travel diary')+(x.date?' · '+esc(x.date):'')+'</div>'+
+      '<h3>'+esc(x.title||'Untitled travel diary')+'</h3><p>'+esc(preview)+'</p>'+
+      '<span class="read-link">Read the travel diary <span>↗</span></span></div>'+
+      '<div class="travel-diary-full" hidden>'+nl(x.text||'')+'</div>'+
+    '</article>';
+  }).join('') : '<div class="empty-review">The next journey will find its way here.</div>';
+  host.querySelectorAll('.travel-diary-card').forEach(function(card){
+    const open=function(){
+      const title=card.getAttribute('data-travel-title')||'Travel diary';
+      const body=card.querySelector('.travel-diary-full')?.innerHTML||'';
+      const cover=card.querySelector('.travel-diary-cover img');
+      $('dialogImage').innerHTML=cover?'<img class="creative-modal-image" src="'+esc(cover.getAttribute('src')||'')+'" alt="'+esc(title)+'">':'<div class="journal-modal-cover"><div class="media-kind">Travel diary</div><strong>'+esc(title)+'</strong></div>';
+      $('dialogContent').innerHTML='<div class="eyebrow">Travel diary</div><h2>'+esc(title)+'</h2><div class="review-body">'+body+'</div>';
+      $('modal').classList.add('open');
+      $('modal').setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    };
+    card.addEventListener('click',open);
+    card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
+  });
+}
+
 function renderMediaShelves(d){
   const entries=Array.isArray(d.mediaEntries)?d.mediaEntries.filter(x=>x&&x.enabled!==false):[];
   const groups=[
@@ -1216,6 +1272,7 @@ async function load(){
   renderObsessions(d);
   renderFuture(d);
   renderJournalShelf(d);
+  renderTravelDiaries(d);
   document.body.classList.add('js-ready');
   observeReveals();
 })();
