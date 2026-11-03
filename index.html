@@ -317,7 +317,7 @@ h3{font-size:clamp(2rem,3.5vw,3.5rem);line-height:.9;margin:7px 0 12px}
   transition:padding .35s ease
 }
 .journal-bottom .journal-card:before{
-  content:counter(journalentry, decimal-leading-zero);
+  content:attr(data-entry-number);
   position:absolute;
   left:0;
   bottom:28px;
@@ -1064,10 +1064,10 @@ function renderJournalShelf(d){
     : [];
   const host=$('journalShelf');
   if(!host)return;
-  host.innerHTML=entries.length ? '<div class="media-shelf">'+entries.map(function(x){
+  host.innerHTML=entries.length ? '<div class="media-shelf">'+entries.map(function(x,index){
     const hasText=String(x.text||'').trim();
     const preview=hasText ? String(x.text).split(/\\s+/).slice(0,28).join(' ')+'…' : '';
-    return '<article class="media-entry journal-card reveal" tabindex="0" role="button" aria-label="Open '+esc(x.title||'Journal entry')+'" data-journal-title="'+esc(x.title||'Journal entry')+'">'+
+    return '<article class="media-entry journal-card reveal" data-entry-number="'+String(index+1).padStart(2,'0')+'" tabindex="0" role="button" aria-label="Open '+esc(x.title||'Journal entry')+'" data-journal-title="'+esc(x.title||'Journal entry')+'">'+
       '<div class="journal-thumb">'+(x.image?'<img src="'+esc(x.image)+'" alt="'+esc(x.alt||x.title||'Creative media')+'" loading="lazy">':'')+'<div class="media-kind">'+esc(x.mediaType||'Creative entry')+'</div><div class="journal-thumb-title">'+esc(x.title||'Untitled')+'</div><div class="journal-thumb-mark">↗</div></div>'+
       '<div class="journal-card-copy"><div class="media-kind">'+esc(x.mediaType||'Entry')+(x.date?' · '+esc(x.date):'')+'</div>'+
       '<h3>'+esc(x.title||'Untitled')+'</h3>'+
