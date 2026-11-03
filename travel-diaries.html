@@ -107,20 +107,20 @@ function renderTravelArchive(data){
  document.getElementById("postCount").textContent=String(posts.length).padStart(2,"0")+" "+(posts.length===1?"story":"stories");
  document.getElementById("travelPosts").innerHTML=posts.length?posts.map((p,i)=>{
   const href="travel-post.html?post="+encodeURIComponent(p.slug),img=imgPath(p.cover),meta=[p.date,p.locations].filter(Boolean).map(esc).join(" · ");
-  return '<article class="post-card '+(i===0?"featured":"")+'"><a class="post-image" href="'+href+'" aria-label="Read '+esc(p.title)+'">'+(img?'<img src="'+esc(img)+'" alt="'+esc(p.coverAlt||p.title)+'" loading="'+(i===0?"eager":"lazy")+'">':"")+'</a><div class="post-copy"><div class="meta">'+meta+'</div><h2>'+esc(p.title)+'</h2><p>'+esc(p.excerpt||"")+'</p><a class="read-link" href="'+href+'">Read the diary ↗</a></div></article>';
+  return '<article class="post-card '+(i===0?"featured":"")+'"><a class="post-image" href="'+href+'" aria-label="Read '+esc(p.title)+'">'+(img?'<img src="'+esc(img)+'" alt="" loading="'+(i===0?"eager":"lazy")+'" onerror="this.remove()">':"")+'</a><div class="post-copy"><div class="meta">'+meta+'</div><h2>'+esc(p.title)+'</h2><p>'+esc(p.excerpt||"")+'</p><a class="read-link" href="'+href+'">Read the diary ↗</a></div></article>';
  }).join(""):empty("No travel stories have been added yet.");
 
  const postcards=Array.isArray(data.postcards)?data.postcards.filter(x=>x&&imgPath(x.image)):[];
- document.getElementById("postcardGrid").innerHTML=postcards.length?postcards.map(x=>'<figure class="postcard"><img src="'+esc(imgPath(x.image))+'" alt="'+esc(x.alt||x.caption||"Travel photograph")+'" loading="lazy">'+(x.caption?'<figcaption>'+esc(x.caption)+'</figcaption>':"")+'</figure>').join(""):empty("Your photo postcards will appear here when you add them.");
+ document.getElementById("postcardGrid").innerHTML=postcards.length?postcards.map(x=>'<figure class="postcard"><img src="'+esc(imgPath(x.image))+'" alt="'+esc(x.alt||x.caption||"Travel photograph")+'" loading="lazy">'+(x.caption?'<figcaption>'+esc(x.caption)+'</figcaption>':"")+'</figure>').join(""):"";
 
  const places=Array.isArray(data.placesWorthReturningTo)?data.placesWorthReturningTo:[];
- document.getElementById("placeGrid").innerHTML=places.length?places.map(x=>'<article class="place-card"><div class="place-location">'+esc(x.location||"")+'</div><h3>'+esc(x.title||"")+'</h3><p>'+esc(x.note||"")+'</p></article>').join(""):empty("Places you would love to revisit will appear here.");
+ document.getElementById("placeGrid").innerHTML=places.length?places.map(x=>'<article class="place-card"><div class="place-location">'+esc(x.location||"")+'</div><h3>'+esc(x.title||"")+'</h3><p>'+esc(x.note||"")+'</p></article>').join(""):"";
 
  const notes=Array.isArray(data.littleTravelNotes)?data.littleTravelNotes:[];
- document.getElementById("travelNotes").innerHTML=notes.length?notes.map(x=>'<article class="note-card">'+esc(typeof x==="string"?x:x.text||"")+'</article>').join(""):empty("Your little travel notes will appear here.");
+ document.getElementById("travelNotes").innerHTML=notes.length?notes.map(x=>'<article class="note-card">'+esc(typeof x==="string"?x:x.text||"")+'</article>').join(""):"";
 
  const wishlist=Array.isArray(data.travelWishlist)?data.travelWishlist:[];
- document.getElementById("wishlistGrid").innerHTML=wishlist.length?wishlist.map(x=>'<span class="wishlist-item">'+esc(typeof x==="string"?x:x.place||x.title||"")+'</span>').join(""):empty("Add places you hope to visit to your travel wishlist.");
+ document.getElementById("wishlistGrid").innerHTML=wishlist.length?wishlist.map(x=>'<span class="wishlist-item">'+esc(typeof x==="string"?x:x.place||x.title||"")+'</span>').join(""):"";
 }
 fetch("content/travel-diaries.json").then(r=>{if(!r.ok)throw new Error("load");return r.json();}).then(renderTravelArchive).catch(()=>{
  document.getElementById("travelPosts").innerHTML=empty("The travel archive could not be loaded. Please refresh.");
