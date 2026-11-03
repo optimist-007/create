@@ -18,6 +18,39 @@
   "posts": [
     {
       "type": "Movie",
+      "title": "The Wild Robot",
+      "date": "2024",
+      "image": "./assets/wild-robot-cover.svg",
+      "excerpt": "The first time I watched The Wild Robot, I didn't even watch it completely. I had only watched about ten minutes, but it attracted me enough that I remembered it. A month later, I stumbled upon it again and decided to watch it till the end. It turned out to be so beautiful.",
+      "review": "The first time I watched The Wild Robot, I didn't even watch it completely. I had only watched about ten minutes, but it attracted me enough that I remembered it. After a month or so, I was randomly changing channels when I stumbled upon the movie again. I thought I would just watch it till the end, and it turned out to be so beautiful.\n\nAt a time when I feel that AI is slowly dominating us and might eventually take up many of our jobs, I had also watched The Matrix, which made me wonder whether things could eventually turn out that way. Amidst all these thoughts, this movie was truly heartwarming.\n\nInitially, the story is about a robot who is assigned to raise a gosling. I'm not sure whether I should call it a goose or a gosling, but what struck me was how motherly a robot could be. Usually, robots are expected to follow commands. Here, Roz is even commanded by a fox rather than a human. The fox has his own greed and interests, but he eventually becomes something like a father to the gosling.\n\nRoz is initially supposed to stay with the gosling only until it learns to fly. But she stays beyond that. She fights till the end to protect the gosling from all kinds of dangers. She protects him from everything she can, and eventually, the gosling gives back in his own way too.\n\nI found this relationship between the robot and the gosling so beautiful. Roz's role was initially just to follow orders, but she ends up doing much more than what was expected of her.\n\nThe animation is so good, and the storytelling, voice actors and character designs are equally wonderful. I genuinely loved this movie. I think this is one of the few animated movies I have enjoyed so much, and I would definitely watch it again.",
+      "quote": "",
+      "link": "",
+      "media": []
+    },
+    {
+      "type": "Movie",
+      "title": "Alappuzha Gymkhana",
+      "date": "2025",
+      "image": "./assets/alappuzha-gymkhana-cover.svg",
+      "excerpt": "I expected the familiar sports-movie formula, with the hero winning or losing a championship. Instead, this movie was much more about building a boxing team and letting the rest of the team shine.",
+      "review": "In any sports movie, I have always had this expectation that the hero will either win or lose at the end. So, I thought this movie might end with Naslen winning a medal or a championship. But this movie was much more about building a boxing team.\n\nIt was quite out of the box for me because the hero, despite being the central character, was almost like a supporting character in the sporting journey. He was supportive and acted as a cheerleader, allowing the rest of the team to shine as heroes.\n\nI really enjoyed watching it. There was so much to the story. The boys initially started learning boxing because they wanted revenge, but somewhere along the way, they started enjoying the sport itself.\n\nI think the credit goes to the boys, their coach and the way they represented their club at the state level. They didn't have proper funding or the influence of a well-known club, yet they managed to perform well. The coach trained them without putting too much pressure on them. He allowed them to learn, grow and evolve throughout the tournament.\n\nBy the end, the bond between the team members had grown beautifully, despite their different personalities and opinions.\n\nI also believe that whether you are participating in an individual event or a team event, having a good support system makes a huge difference. You can correct yourself, improve your performance and come back stronger the next day when you have people supporting you. In that sense, there is no real losing when you have a team standing beside you.\n\nThe movie also highlights how parents should learn to accept failure and allow their children to experience it.\n\nOverall, I thought this was a very good movie with a lot of learning beyond the sport itself.",
+      "quote": "",
+      "link": "",
+      "media": []
+    },
+    {
+      "type": "Book",
+      "title": "The Yellow Wallpaper",
+      "date": "1892",
+      "image": "./assets/yellow-wallpaper-cover.svg",
+      "excerpt": "This short story is so good at highlighting the mental trauma that a woman goes through. Through something as ordinary as the wallpaper, the narrator expresses what is happening inside her mind.",
+      "review": "This short story is so good at highlighting the mental trauma that a woman goes through.\n\nThe female protagonist is recovering after childbirth, and her husband, who is a physician, prescribes a rest cure for her. She is confined to a room, and as the story progresses, we get to understand her mental state through the way she describes the yellow wallpaper in her room. There are a few other characters in the story, but what I found particularly interesting was how the wallpaper becomes a way for her to express her thoughts and deteriorating mental state.\n\nIt is so well written. Through something as ordinary as the wallpaper, she narrates what is happening inside her mind.\n\nI have been reading quite a few books written by women, and this story made me think about something. I feel that women were more vocal about their mental health in earlier times, even though they did not necessarily receive the care or understanding they needed. The struggles were always there, but at least they found ways to express them.\n\nToday, despite all the developments we have made, I don't see women speaking openly about their mental health as much as I would expect. Women go through so many changes in their bodies, and yet we don't always talk about these experiences with the people around us.\n\nI have never really been able to relate to many women around me because I rarely find conversations that go beyond general things. I sometimes wonder how women discuss these experiences, what goes on in their minds and whom they feel comfortable talking to.\n\nI have often found myself relating more easily to men than to women. I don't know exactly why, but perhaps it has something to do with how difficult I find it to come across women who openly discuss these things.",
+      "quote": "",
+      "link": "",
+      "media": []
+    },
+    {
+      "type": "Movie",
       "title": "Jab We Met",
       "date": "",
       "image": "https://raw.githubusercontent.com/optimist-007/optimist-007.github.io/main/content/jab_we_met.png",
