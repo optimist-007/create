@@ -1,24 +1,23 @@
-# Travel Diaries: add a new blog post
+# Travel Diaries
 
-The Creative Side homepage links to \`travel-diaries.html\`. Add all future travel blogs to the Travel Diaries archive, not to the homepage.
+The Creative Side homepage contains a single link to `travel-diaries.html`. All travel content lives on this separate page.
 
-## Steps
+The page has five sections:
 
-1. Upload your collage or photographs into the repository's \`assets/\` folder.
-2. Open \`content/travel-diaries.json\`.
-3. Add a new object to the \`posts\` array. Keep each post's \`slug\` unique.
-4. Use the existing first entry as the structure to copy.
+1. **Travel Stories** — add full blog posts to the `posts` array in `content/travel-diaries.json`. Each post needs a unique `slug`, title, date, locations, cover image, excerpt and body. The article opens at `travel-post.html?post=YOUR-SLUG`.
+2. **Postcards** — add image objects to the `postcards` array:
+   ```json
+   { "image": "assets/your-photo.jpg", "alt": "Describe the photograph.", "caption": "Optional caption." }
+   ```
+3. **Places Worth Returning To** — add objects to `placesWorthReturningTo`:
+   ```json
+   { "title": "Place name", "location": "Region or country", "note": "Why you would return." }
+   ```
+4. **Little Travel Notes** — add short strings to `littleTravelNotes`.
+5. **Travel Wishlist** — add destination names to `travelWishlist`.
 
-Each entry can contain:
-- \`slug\`: URL-safe unique id, e.g. \`weekend-in-goa-2027\`
-- \`title\`, \`date\`, \`locations\`
-- \`cover\`: path to its main collage or cover image, e.g. \`assets/goa-collage.jpg\`
-- \`coverAlt\`: image description
-- \`excerpt\`: opening paragraph shown on the archive
-- \`body\`: blocks in reading order. Use \`paragraph\`, \`heading\`, or \`image\`.
-- \`gallery\`: optional additional photographs
-- \`published\`: set to \`false\` to hide a draft
+Upload collages and photographs to the repository's `assets/` folder and use repository-relative paths beginning with `assets/`.
 
-Article links are created automatically at \`travel-post.html?post=YOUR-SLUG\`.
+Supported article body blocks are `paragraph`, `heading`, and `image`. Use `published: false` to hide a draft story.
 
-The site displays the text you enter. It does not add hashtags or emojis or rewrite your content.
+The website displays the words you add. It does not add emojis or hashtags or rewrite your content.
