@@ -804,6 +804,20 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
  .travel-diary-cover img{max-height:none}
 }
 
+
+/* Art gallery */
+.art-gallery-section{padding:clamp(48px,7vw,88px) 0;border-top:1px solid var(--line)}
+.art-gallery-intro{max-width:620px;color:var(--muted);margin-bottom:28px}
+.art-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2.4vw,28px);align-items:start}
+.artwork-card{margin:0;padding:12px;background:var(--paper-2);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(52,43,43,.07)}
+.artwork-card a{display:block;overflow:hidden;background:#e4ded3;border-radius:8px}
+.artwork-card img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain;transition:transform .35s ease}
+.artwork-card a:hover img{transform:scale(1.015)}
+.artwork-card figcaption{padding:13px 5px 4px}
+.artwork-card figcaption strong{display:block;font:500 clamp(1.35rem,2.5vw,2rem)/1.05 var(--serif)}
+.artwork-card figcaption span{display:block;margin-top:5px;color:var(--muted);font:.65rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:650px){.art-gallery-grid{grid-template-columns:1fr;gap:16px}.artwork-card{padding:9px}.artwork-card img{max-height:none}}
+
 </style>
 </head>
 <body>
@@ -813,6 +827,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
       <div class="eyebrow">Creative side</div>
       <div class="topnav">
         <a href="#reviews">Reviews</a>
+        <a href="#art-gallery">Art</a>
         <a href="#obsessions">Now</a>
         <a href="travel-diaries.html">Travel Diaries</a>
         <a href="#journalRandomThoughts">Journal</a>
@@ -943,7 +958,27 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
       </article>
     </div>
   </section>
-  </main>
+  
+  <section class="art-gallery-section" id="art-gallery" aria-labelledby="art-gallery-title">
+    <div class="eyebrow">A little corner of making</div>
+    <h2 id="art-gallery-title">Art Gallery</h2>
+    <p class="art-gallery-intro">Drawings, colours and things I felt like putting on paper.</p>
+    <div class="art-gallery-grid">
+      <figure class="artwork-card">
+        <a href="./assets/aurora-pastel-art.jpg" target="_blank" rel="noopener">
+          <img src="./assets/aurora-pastel-art.jpg" alt="Blue and green pastel landscape artwork" loading="lazy">
+        </a>
+        <figcaption><strong>Untitled</strong><span>Pastel artwork</span></figcaption>
+      </figure>
+      <figure class="artwork-card">
+        <a href="./assets/krishna-yashoda-sketch.jpg" target="_blank" rel="noopener">
+          <img src="./assets/krishna-yashoda-sketch.jpg" alt="Pencil sketch depicting Krishna and Yashoda" loading="lazy">
+        </a>
+        <figcaption><strong>Untitled</strong><span>Pencil sketch</span></figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
 
   <div id="journalRandomThoughts" class="journal-bottom">
     <div class="journal-bottom-head">
