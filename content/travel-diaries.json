@@ -63,5 +63,19 @@
         }
       ]
     }
-  ]
+  ],
+  "postcards": [],
+  "placesWorthReturningTo": [
+    {
+      "title": "Cabo de Rama Beach",
+      "location": "Goa",
+      "note": "If I had to rank the beaches based on beauty and cleanliness, Cabo de Rama Beach in Goa would win. The water was crystal clear, the view was exotic, and the time I spent there was memorable."
+    }
+  ],
+  "littleTravelNotes": [
+    "The Calicut beach is calmest between 3 and 4 p.m. After that, it gets packed with crowds.",
+    "The mangroves, backwaters and beach made the one-hour Poovar boat ride worth it.",
+    "Surprisingly, Versova is much cleaner than Juhu."
+  ],
+  "travelWishlist": []
 }
