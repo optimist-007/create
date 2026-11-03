@@ -163,8 +163,8 @@ h3{font-size:clamp(2rem,3.5vw,3.5rem);line-height:.9;margin:7px 0 12px}
 .dialog-quote{border-left:3px solid var(--gold);padding-left:17px;font-family:var(--serif);font-size:1.5rem;line-height:1.1;margin-top:28px}
 /* Keep content visible if JavaScript or the reveal observer is unavailable. */
 .reveal{opacity:1;transform:none}
-.js-ready .reveal{opacity:1;transform:none;transition:opacity .35s ease,transform .35s ease}
-.js-ready .reveal.visible{opacity:1;transform:none}
+.js-ready .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0)}
 .hidden{display:none!important}
 .toast{position:fixed;right:16px;bottom:16px;background:var(--ink);color:var(--paper);padding:11px 14px;font:12px var(--mono);display:none;z-index:40}
 @media(max-width:900px){
@@ -814,7 +814,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
       <div class="topnav">
         <a href="#reviews">Reviews</a>
         <a href="#obsessions">Now</a>
-        <a href="#travelDiaries">Travel diaries</a>
+        <a href="travel-diaries.html">Travel Diaries</a>
         <a href="#journalRandomThoughts">Journal</a>
         <a href="index.html#future">Stories</a>
       </div>
@@ -848,7 +848,26 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
       <p class="section-kicker" id="archiveCount"></p>
     </div>
     <div class="filters reveal" id="filters"></div>
-    <div id="reviewList"></div>
+    <div id="reviewList">
+      <article class="review-stage reveal">
+        <div class="poster-wrap"><div class="poster-shadow"></div><div class="poster">
+          <div class="poster-tag">Movie</div><img src="./assets/wild-robot-cover.svg" alt="The Wild Robot review cover" loading="lazy"><div class="stamp">OPEN<br>THE<br>PAGE</div>
+        </div></div>
+        <div class="review-copy"><div class="review-number">01</div><div class="meta">Movie · 2024</div><h3 class="review-title">The Wild Robot</h3><p class="review-excerpt">A heartwarming story about a robot who learns to care for a gosling, and a reminder that care can grow beyond the instructions we are given.</p><a class="read-link" href="#reviews">Read the full review <span>↗</span></a></div>
+      </article>
+      <article class="review-stage reveal reverse">
+        <div class="poster-wrap"><div class="poster-shadow"></div><div class="poster">
+          <div class="poster-tag">Movie</div><img src="./assets/alappuzha-gymkhana-cover.svg" alt="Alappuzha Gymkhana review cover" loading="lazy"><div class="stamp">OPEN<br>THE<br>PAGE</div>
+        </div></div>
+        <div class="review-copy"><div class="review-number">02</div><div class="meta">Movie · 2025</div><h3 class="review-title">Alappuzha Gymkhana</h3><p class="review-excerpt">A sports film that shifts the spotlight from the hero to the team, its coach, and the support that helps everyone grow.</p><a class="read-link" href="#reviews">Read the full review <span>↗</span></a></div>
+      </article>
+      <article class="review-stage reveal">
+        <div class="poster-wrap"><div class="poster-shadow"></div><div class="poster">
+          <div class="poster-tag">Book</div><img src="./assets/yellow-wallpaper-cover.svg" alt="The Yellow Wallpaper review cover" loading="lazy"><div class="stamp">OPEN<br>THE<br>PAGE</div>
+        </div></div>
+        <div class="review-copy"><div class="review-number">03</div><div class="meta">Short story · 1892</div><h3 class="review-title">The Yellow Wallpaper</h3><p class="review-excerpt">A powerful story of a woman's mental distress, told through the wallpaper in the room where she is confined.</p><a class="read-link" href="#reviews">Read the full review <span>↗</span></a></div>
+      </article>
+    </div>
   </section>
 
   <section class="section" id="obsessions">
@@ -899,15 +918,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
 
 
 
-  <section class="section travel-diary-section" id="travelDiaries">
-    <div class="section-head reveal">
-      <div><div class="eyebrow">Out of office · into the blue</div><h2>Travel diaries.</h2></div>
-      <p class="section-kicker">Places, coastlines and little moments I want to keep.</p>
-    </div>
-    <div id="travelDiaryShelf"></div>
-  </section>
-
-
   <section class="section lately-section" id="a-few-things-lately">
     <h2 class="lately-heading">A few things, lately.</h2>
     <div class="lately-grid">
@@ -933,15 +943,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
       </article>
     </div>
   </section>
-  <section class="section travel-diaries-section" id="travelDiaries">
-    <div class="section-head reveal">
-      <div><div class="eyebrow">Travel diaries</div><h2>Places I keep<br>coming back to.</h2></div>
-      <p class="section-kicker">Little records of the places, coastlines and moments I want to remember. More journeys will find their way here.</p>
-    </div>
-    <div id="travelDiaryShelf"></div>
-  </section>
-
-</main>
+  </main>
 
   <div id="journalRandomThoughts" class="journal-bottom">
     <div class="journal-bottom-head">
