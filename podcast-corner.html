@@ -40,6 +40,25 @@ body{background:radial-gradient(circle at 88% 15%,rgba(79,120,102,.17),transpare
 .creative-nav .nav-home{font-weight:600;letter-spacing:.13em}
 .creative-nav .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.8vw,22px);flex-wrap:wrap}
 @media(max-width:760px){.creative-nav{align-items:flex-start;flex-direction:column;gap:12px}.creative-nav .nav-links{justify-content:flex-start;gap:9px 17px}}
+
+/* Podcast: studio console, episode index and sound-wave visual language */
+body{background:#e5ede7!important}
+.page{max-width:1160px!important}
+.hero{display:grid!important;grid-template-columns:1fr minmax(180px,260px)!important;align-items:center!important;gap:30px!important;padding:clamp(50px,8vw,90px) 0 36px!important}
+.hero h1{font-size:clamp(4rem,9vw,7.8rem)!important}
+.hero p{max-width:560px!important}
+.orbit{position:relative!important;inset:auto!important;width:clamp(150px,22vw,240px)!important;justify-self:center!important;opacity:.75!important;border-radius:50%!important;background:repeating-radial-gradient(circle,transparent 0 12px,rgba(79,120,102,.12) 13px 14px)!important}
+.content{padding:36px 0!important}
+.content>.label{margin-bottom:18px!important;display:flex;align-items:center;gap:14px}
+.content>.label:after{content:"";height:1px;background:var(--line);flex:1}
+.audio-items{display:grid!important;grid-template-columns:1fr!important;gap:14px!important}
+.audio-card{display:grid!important;grid-template-columns:minmax(260px,.9fr) 1.1fr!important;align-items:center!important;background:#f4f7f2!important;border:1px solid var(--line)!important;box-shadow:0 12px 28px rgba(38,59,50,.07)!important}
+.audio-card .player{aspect-ratio:16/9!important}
+.audio-copy{padding:clamp(20px,4vw,40px)!important}
+.audio-copy h2{font:400 clamp(2rem,4vw,3.2rem)/.98 var(--serif)!important;margin:10px 0!important}
+.empty{background:#f4f7f2!important;border:1px dashed var(--line)!important;padding:28px!important}
+@media(max-width:700px){.hero{grid-template-columns:1fr!important}.orbit{display:none!important}.audio-card{grid-template-columns:1fr!important}}
+
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; base-uri 'self'; form-action 'none'"></head><body><main class="page">
 <nav class="creative-nav" aria-label="Creative spaces"><a class="nav-home" href="index.html">Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="creative-experiments.html">Experiments</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
 <header class="hero"><div class="orbit" aria-hidden="true"></div><div class="eyebrow">03 / Conversations · episodes · audio</div><h1>Podcast Corner</h1><p>Recorded conversations, podcast episodes and spoken thoughts. Press play, settle in and stay for a while.</p></header>
