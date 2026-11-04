@@ -40,6 +40,26 @@ body{background:radial-gradient(circle at 88% 15%,rgba(120,103,143,.18),transpar
 .creative-nav .nav-home{font-weight:600;letter-spacing:.13em}
 .creative-nav .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.8vw,22px);flex-wrap:wrap}
 @media(max-width:760px){.creative-nav{align-items:flex-start;flex-direction:column;gap:12px}.creative-nav .nav-links{justify-content:flex-start;gap:9px 17px}}
+
+/* Music: listening-room layout with album-like recording cards */
+body{background:#e9e5ef!important}
+.page{max-width:1160px!important}
+.hero{min-height:390px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;padding:clamp(56px,9vw,108px) 0 38px!important}
+.hero h1{font-size:clamp(4.2rem,10vw,8.5rem)!important;max-width:850px!important}
+.hero p{max-width:520px!important}
+.orbit{width:clamp(150px,25vw,270px)!important;right:6%!important;top:14%!important;opacity:.28!important}
+.content{padding:36px 0!important}
+.content>.label{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.content>.label:after{content:"";height:1px;background:var(--line);flex:1}
+.audio-items{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important}
+.audio-card{display:flex!important;flex-direction:column!important;background:#f7f4fa!important;border:1px solid var(--line)!important;box-shadow:0 15px 32px rgba(48,44,59,.08)!important}
+.audio-card .player{aspect-ratio:16/9!important}
+.audio-card .player iframe{width:100%!important;height:100%!important}
+.audio-copy{padding:20px 22px 24px!important}
+.audio-copy h2{font:400 clamp(1.8rem,3vw,2.5rem)/1 var(--serif)!important;margin:10px 0!important}
+.empty{max-width:650px!important;margin:30px auto!important;padding:32px!important;background:#f7f4fa!important;border:1px solid var(--line)!important}
+@media(max-width:700px){.audio-items{grid-template-columns:1fr!important}.hero{min-height:300px!important}.orbit{opacity:.13!important;right:0!important}}
+
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; base-uri 'self'; form-action 'none'"></head><body><main class="page">
 <nav class="creative-nav" aria-label="Creative spaces"><a class="nav-home" href="index.html">Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="creative-experiments.html">Experiments</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
 <header class="hero"><div class="orbit" aria-hidden="true"></div><div class="eyebrow">02 / Sound · voice · melody</div><h1>Music Room</h1><p>Songs, covers, vocal recordings and musical experiments. A place for the sounds I make and the songs I return to.</p></header>
