@@ -8,7 +8,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="description" content="A personal creative magazine of films, books, stories and things that stay.">
+<meta name="description" content="A personal collection of art, travel, writing, music, food and things worth making.">
 <title>Creative side</title>
 <style>
 :root{
@@ -846,6 +846,19 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
 @media(max-width:760px){.spaces-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.space-card{min-height:170px;padding:17px}.space-art{width:86px;height:86px;right:4px}.spaces-heading{align-items:start;flex-direction:column;gap:8px}}
 @media(max-width:480px){.spaces-grid{grid-template-columns:1fr}.space-card{min-height:145px}.space-card h3{font-size:2rem}}
 
+
+.space-kitchen-card{background:linear-gradient(145deg,#f0dfc7,#e5c6a4);color:#4b3022;border-color:rgba(108,69,43,.22)}
+.space-kitchen-card:before{background:linear-gradient(135deg,rgba(255,255,255,.3),transparent 65%)}
+.space-kitchen-card .space-art{color:#895538;stroke:currentColor}
+.space-kitchen-card .space-art .thin{stroke-width:1}
+
+.creative-nav{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:13px 0 15px;border-bottom:1px solid var(--line);font:500 .66rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.creative-nav a{color:inherit;text-decoration:none;white-space:nowrap;transition:opacity .2s ease,color .2s ease}
+.creative-nav a:hover{opacity:.68;text-decoration:underline;text-underline-offset:5px}
+.creative-nav .nav-home{font-weight:600;letter-spacing:.13em}
+.creative-nav .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.8vw,22px);flex-wrap:wrap}
+@media(max-width:760px){.creative-nav{align-items:flex-start;flex-direction:column;gap:12px}.creative-nav .nav-links{justify-content:flex-start;gap:9px 17px}}
+
 </style>
 </head>
 <body>
@@ -886,6 +899,8 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
     <a class="space-card space-travel-card" href="travel-diaries.html"><span class="space-no">04 · Places</span><div><h3>Travel Diaries</h3><p>Beach days, journeys, photographs and postcards.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M8 70q18-18 36 0t36 0 22 0M8 84q18-18 36 0t36 0 22 0"/><circle cx="76" cy="27" r="15"/><path class="thin" d="M18 27l12-10 12 10-12 10z"/></svg><span class="space-arrow">↗</span></a>
     <a class="space-card space-words-card" href="words-and-thoughts.html"><span class="space-no">05 · Writing</span><div><h3>Words &amp; Thoughts</h3><p>Reflections, personal essays and things worth saying.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M25 15h48l14 14v67H25zM73 15v16h14M37 46h38M37 58h38M37 70h29"/><path class="thin" d="M20 22v76"/></svg><span class="space-arrow">↗</span></a>
     <a class="space-card space-experiments-card" href="creative-experiments.html"><span class="space-no">06 · In progress</span><div><h3>Creative Experiments</h3><p>Little projects, handmade things and ideas in motion.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M55 8l8 31 31-8-22 23 22 23-31-8-8 31-8-31-31 8 22-23-22-23 31 8z"/><circle class="fill" cx="55" cy="55" r="12"/></svg><span class="space-arrow">↗</span></a>
+  
+    <a class="space-card space-kitchen-card" href="kitchen-stories.html"><span class="space-no">07 · Cooking &amp; baking</span><div><h3>Kitchen Stories</h3><p>Recipes, baking experiments, favourite flavours and things made with love.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M18 48h74l-8 42H26zM13 48h84M30 39c-7-10 5-13 0-23M53 39c-7-10 5-13 0-23M76 39c-7-10 5-13 0-23"/><path class="thin" d="M39 65h32M43 76h24"/></svg><span class="space-arrow">↗</span></a>
   </div>
 </section>
 
