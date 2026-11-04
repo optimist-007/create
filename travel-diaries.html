@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://images.unsplash.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; script-src 'self' 'unsafe-inline'; base-uri 'self'; form-action 'none'">
 <meta name="description" content="Travel stories and photo diaries."><title>Travel Diaries · Creative Side</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -187,7 +187,7 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 <footer><a href="index.html">Back to Creative Side</a></footer></main>
 <script>
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function imgPath(s){s=String(s||"").trim();return /^assets\/[A-Za-z0-9._% -]+$/.test(s)?s:"";}
+function imgPath(s){s=String(s||"").trim();return /^assets\/[A-Za-z0-9._% -]+$/.test(s)||/^https:\/\/images\.unsplash\.com\/[A-Za-z0-9?&=._%-]+$/.test(s)?s:"";}
 function empty(text){return '<div class="empty-section">'+esc(text)+'</div>';}
 function renderTravelArchive(data){
  const posts=Array.isArray(data.posts)?data.posts.filter(p=>p&&p.slug&&p.title&&p.published!==false):[];
