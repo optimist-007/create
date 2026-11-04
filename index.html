@@ -818,6 +818,34 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
 .artwork-card figcaption span{display:block;margin-top:5px;color:var(--muted);font:.65rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:650px){.art-gallery-grid{grid-template-columns:1fr;gap:16px}.artwork-card{padding:9px}.artwork-card img{max-height:none}}
 
+
+/* Creative spaces: six distinct doors into the collections */
+.creative-spaces{padding:clamp(34px,5vw,58px) 0 48px}
+.spaces-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}
+.spaces-heading h2{font:500 clamp(2.4rem,4.6vw,4rem)/.94 var(--serif);letter-spacing:-.04em;margin:7px 0 0}
+.spaces-heading p{max-width:340px;color:var(--muted);font-size:.86rem;margin:0 0 3px}
+.spaces-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.space-card{position:relative;isolation:isolate;min-height:190px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:15px;transition:transform .22s ease,box-shadow .22s ease}
+.space-card:hover{transform:translateY(-4px);box-shadow:0 15px 32px rgba(52,43,43,.1)}
+.space-card .space-no{font:500 .62rem var(--mono);letter-spacing:.16em;text-transform:uppercase;opacity:.78}
+.space-card h3{font:500 clamp(1.8rem,2.6vw,2.5rem)/.92 var(--serif);letter-spacing:-.035em;margin:0;max-width:82%}
+.space-card p{font-size:.78rem;line-height:1.45;max-width:78%;margin:8px 0 0;opacity:.82}
+.space-card .space-arrow{position:absolute;right:18px;bottom:18px;width:38px;height:38px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:1.05rem}
+.space-art{position:absolute;right:10px;top:18px;width:104px;height:104px;opacity:.42;z-index:-1}
+.space-art path,.space-art circle,.space-art ellipse{fill:none;stroke:currentColor;stroke-width:1.2}
+.space-art .fill{fill:currentColor;stroke:none;opacity:.18}
+.space-art .thin{stroke-width:.7}
+.space-art .dots{fill:currentColor;stroke:none}
+.space-art text{fill:currentColor;stroke:none;font:10px var(--mono)}
+.space-art-card{background:#e6d9c9;color:#493d35}
+.space-music-card{background:#ded9e7;color:#413c50}
+.space-podcast-card{background:#d9e1dc;color:#344b43}
+.space-travel-card{background:#dce5e2;color:#36534d}
+.space-words-card{background:#eadce0;color:#653e4b}
+.space-experiments-card{background:#e9e2d1;color:#5b4a2c}
+@media(max-width:760px){.spaces-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.space-card{min-height:170px;padding:17px}.space-art{width:86px;height:86px;right:4px}.spaces-heading{align-items:start;flex-direction:column;gap:8px}}
+@media(max-width:480px){.spaces-grid{grid-template-columns:1fr}.space-card{min-height:145px}.space-card h3{font-size:2rem}}
+
 </style>
 </head>
 <body>
@@ -826,12 +854,9 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
     <div class="topline">
       <div class="eyebrow">Creative side</div>
       <div class="topnav">
+        <a href="#creative-spaces">Explore spaces</a>
         <a href="#reviews">Reviews</a>
-        <a href="./art-gallery.html">Art Gallery</a>
         <a href="#obsessions">Now</a>
-        <a href="travel-diaries.html">Travel Diaries</a>
-        <a href="words-and-thoughts.html">Words &amp; Thoughts</a>
-        <a href="index.html#future">Stories</a>
       </div>
     </div>
     <div class="mast-grid">
@@ -851,6 +876,18 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
   <div class="ticker-wrap" aria-hidden="true">
     <div class="ticker" id="ticker"></div>
   </div>
+
+<section class="creative-spaces" id="creative-spaces">
+  <div class="spaces-heading"><div><div class="eyebrow">Beyond the page</div><h2>Creative spaces.</h2></div><p>Different ways of making, noticing and remembering. Choose a doorway and wander in.</p></div>
+  <div class="spaces-grid">
+    <a class="space-card space-art-card" href="art-gallery.html"><span class="space-no">01 · Visual art</span><div><h3>Art Gallery</h3><p>Paintings, drawings and pieces made by hand.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><circle cx="55" cy="55" r="39"/><circle class="thin" cx="55" cy="55" r="28"/><path d="M19 74 Q43 16 82 39 T99 78"/><circle class="fill" cx="55" cy="55" r="12"/></svg><span class="space-arrow">↗</span></a>
+    <a class="space-card space-music-card" href="music-room.html"><span class="space-no">02 · Sound</span><div><h3>Music Room</h3><p>Songs, covers, voice and musical experiments.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M42 76V22l48-9v54"/><ellipse cx="29" cy="78" rx="13" ry="9"/><ellipse cx="77" cy="68" rx="13" ry="9"/><path class="thin" d="M42 36l48-9M42 48l48-9"/></svg><span class="space-arrow">↗</span></a>
+    <a class="space-card space-podcast-card" href="podcast-corner.html"><span class="space-no">03 · Conversations</span><div><h3>Podcast Corner</h3><p>Recorded conversations, episodes and audio notes.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><rect x="42" y="12" width="26" height="52" rx="13"/><path d="M29 49v7a26 26 0 0052 0v-7M55 82v16M40 98h30"/><path class="thin" d="M18 33q-12 22 0 44M92 33q12 22 0 44"/></svg><span class="space-arrow">↗</span></a>
+    <a class="space-card space-travel-card" href="travel-diaries.html"><span class="space-no">04 · Places</span><div><h3>Travel Diaries</h3><p>Beach days, journeys, photographs and postcards.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M8 70q18-18 36 0t36 0 22 0M8 84q18-18 36 0t36 0 22 0"/><circle cx="76" cy="27" r="15"/><path class="thin" d="M18 27l12-10 12 10-12 10z"/></svg><span class="space-arrow">↗</span></a>
+    <a class="space-card space-words-card" href="words-and-thoughts.html"><span class="space-no">05 · Writing</span><div><h3>Words &amp; Thoughts</h3><p>Reflections, personal essays and things worth saying.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M25 15h48l14 14v67H25zM73 15v16h14M37 46h38M37 58h38M37 70h29"/><path class="thin" d="M20 22v76"/></svg><span class="space-arrow">↗</span></a>
+    <a class="space-card space-experiments-card" href="creative-experiments.html"><span class="space-no">06 · In progress</span><div><h3>Creative Experiments</h3><p>Little projects, handmade things and ideas in motion.</p></div><svg class="space-art" viewBox="0 0 110 110" aria-hidden="true"><path d="M55 8l8 31 31-8-22 23 22 23-31-8-8 31-8-31-31 8 22-23-22-23 31 8z"/><circle class="fill" cx="55" cy="55" r="12"/></svg><span class="space-arrow">↗</span></a>
+  </div>
+</section>
 
   <div id="creativeCustomSections"></div>
 
