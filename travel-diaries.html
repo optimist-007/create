@@ -85,11 +85,18 @@ body{background:radial-gradient(circle at 92% 8%,rgba(56,107,99,.13),transparent
 .wishlist-item{background:#f7faf6}
 @media(max-width:760px){.hero:after{display:none}.postcard:nth-child(n){transform:none}}
 
+
+/* The collage is the visual cover of its blog card */
+.post-card.featured{grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-items:stretch}
+.post-card.featured .post-image{display:block;min-height:300px;background:#d8e3dc;overflow:hidden}
+.post-card.featured .post-image img{display:block;width:100%;height:100%;min-height:300px;object-fit:cover;transition:transform .45s ease}
+.post-card.featured:hover .post-image img{transform:scale(1.035)}
+@media(max-width:760px){.post-card.featured{grid-template-columns:1fr}.post-card.featured .post-image,.post-card.featured .post-image img{min-height:220px;max-height:360px}}
 </style></head>
 <body><main class="page">
 <div class="topline"><a href="index.html">← Creative Side</a><span style="display:flex;flex-wrap:wrap;gap:12px"><a href="art-gallery.html">Art</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="words-and-thoughts.html">Words</a><a href="creative-experiments.html">Experiments</a></span></div>
 <header class="hero"><div><div class="kicker">04 / Out of office · into the blue</div><h1>Travel diaries.</h1></div><p class="hero-note">Travel stories and photo diaries.</p></header>
-<section class="travel-feature" id="travelFeature" aria-label="Beach memories"></section>
+
   <nav class="jump-nav" aria-label="Travel Diaries sections">
     <a href="#stories">Travel stories</a>
     <a href="#postcards">Postcards</a>
@@ -121,12 +128,11 @@ function imgPath(s){s=String(s||"").trim();return /^assets\/[A-Za-z0-9._% -]+$/.
 function empty(text){return '<div class="empty-section">'+esc(text)+'</div>';}
 function renderTravelArchive(data){
  const posts=Array.isArray(data.posts)?data.posts.filter(p=>p&&p.slug&&p.title&&p.published!==false):[];
- const feature=posts.find(p=>imgPath(p.cover));
- document.getElementById("travelFeature").innerHTML=feature?'<figure style="margin:0"><img src="'+esc(encodeURI(imgPath(feature.cover)))+'" alt="'+esc(feature.coverAlt||"Beach memories collage")+'" loading="eager"><figcaption>Beach memories · Mumbai, Goa & Kerala</figcaption></figure>':"";
  document.getElementById("postCount").textContent=String(posts.length).padStart(2,"0")+" "+(posts.length===1?"story":"stories");
  document.getElementById("travelPosts").innerHTML=posts.length?posts.map((p,i)=>{
   const href="travel-post.html?post="+encodeURIComponent(p.slug),meta=[p.date,p.locations].filter(Boolean).map(esc).join(" · ");
-  return '<article class="post-card '+(i===0?"featured":"")+'"><div class="post-copy"><div class="meta">'+meta+'</div><h2>'+esc(p.title)+'</h2><p>'+esc(p.excerpt||"")+'</p><a class="read-link" href="'+href+'">Read the diary ↗</a></div></article>';
+  const thumb=imgPath(p.cover)?'<a class="post-image" href="'+href+'" aria-label="Open '+esc(p.title)+'"><img src="'+esc(encodeURI(imgPath(p.cover)))+'" alt="'+esc(p.coverAlt||p.title)+'" loading="eager"></a>':"";
+  return '<article class="post-card '+(i===0?"featured":"")+'">'+thumb+'<div class="post-copy"><div class="meta">'+meta+'</div><h2>'+esc(p.title)+'</h2><p>'+esc(p.excerpt||"")+'</p><a class="read-link" href="'+href+'">Read the diary ↗</a></div></article>';
  }).join(""):empty("No travel stories have been added yet.");
 
  const postcards=Array.isArray(data.postcards)?data.postcards.filter(x=>x&&imgPath(x.image)):[];
