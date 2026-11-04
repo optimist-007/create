@@ -55,8 +55,28 @@ footer{border-top:1px solid var(--line);padding-top:14px;margin-top:32px;display
 .podcast-intro .eyebrow{grid-column:1/-1}.podcast-intro h1{font:500 clamp(2.8rem,6vw,5rem)/.9 var(--serif);letter-spacing:-.04em;margin:8px 0 0}.podcast-intro p{margin:0 0 4px;max-width:380px;color:var(--muted)}
 .listen{padding-top:34px!important}.listen h2{margin-top:6px!important}
 @media(max-width:680px){.podcast-scene{height:390px}.person-you{left:9%;width:29%}.person-me{right:9%;width:29%}.podcast-table{left:20%;right:20%;bottom:19%}.mic-you{left:30%;bottom:45%}.mic-me{right:30%;bottom:45%}.plant-left{transform:scale(.75);transform-origin:bottom left;left:-10px}.plant-right{transform:scale(.75);transform-origin:bottom right;right:-10px}.dog{right:3%;transform:scale(.75);transform-origin:bottom right}.scene-caption{font-size:12px}.podcast-intro{grid-template-columns:1fr}.podcast-intro p{margin-top:10px}}
-</style></head><body><main class="page">
-<nav class="creative-nav" aria-label="Creative spaces"><a href="index.html">← Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
+/* One shared editorial masthead across every Creative Side page */
+.creative-nav{position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;width:100%!important;min-height:80px!important;margin:0 0 30px!important;padding:22px 0 20px!important;border:0!important;border-bottom:1px solid rgba(57,49,43,.28)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;font-family:"DM Mono","Courier New",monospace!important;font-size:clamp(10px,.94vw,14px)!important;line-height:1.4!important;letter-spacing:.055em!important;text-transform:uppercase!important}
+.creative-nav a{display:inline-block!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;text-decoration:none!important;white-space:nowrap!important;opacity:1!important;transition:opacity .18s ease,text-decoration-color .18s ease!important}
+.creative-nav a:hover,.creative-nav a:focus-visible{opacity:.62!important;text-decoration:underline!important;text-underline-offset:5px!important}
+.creative-nav .nav-brand{font-weight:700!important;letter-spacing:.035em!important}
+.creative-nav .nav-pages{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:clamp(14px,2.25vw,38px)!important;flex-wrap:wrap!important}
+@media(max-width:900px){.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:14px!important;padding:18px 0!important}.creative-nav .nav-pages{justify-content:flex-start!important;gap:10px 22px!important}}
+@media(max-width:520px){.creative-nav{min-height:0!important;margin-bottom:22px!important}.creative-nav .nav-pages{gap:9px 15px!important;font-size:10px!important}}
+
+</style></head><body>
+<nav class="creative-nav" aria-label="Creative Side navigation">
+<a class="nav-brand" href="index.html">CREATIVE SIDE</a>
+<div class="nav-pages">
+<a href="art-gallery.html">ART GALLERY</a>
+<a href="travel-diaries.html">TRAVEL DIARIES</a>
+<a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a>
+<a href="music-room.html">MUSIC ROOM</a>
+<a href="podcast-corner.html">PODCAST CORNER</a>
+<a href="kitchen-stories.html">KITCHEN STORIES</a>
+</div>
+</nav><main class="page">
+
 <section class="podcast-scene" aria-label="Illustrated podcast room with two people seated across a table, microphones, plants, a dog and a scenic view">
 <div class="scene-window"><div class="scene-hill hill-back"></div><div class="scene-hill hill-front"></div><div class="scene-sun"></div><div class="window-cross vertical"></div><div class="window-cross horizontal"></div></div>
 <div class="scene-plant plant-left"><i></i><i></i><i></i><i></i><b></b></div><div class="scene-plant plant-right"><i></i><i></i><i></i><i></i><b></b></div>
