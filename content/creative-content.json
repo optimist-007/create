@@ -188,14 +188,72 @@
     {
       "collection": "journal",
       "mediaType": "Journal entry",
-      "title": "New entry",
-      "date": "",
-      "text": "",
+      "title": "A little note on the people we meet",
+      "date": "DEMO",
+      "text": "DEMO ENTRY · EDIT ME\n\nSome people arrive quietly and still leave us with a thought that stays for a long time. Some conversations make us reconsider an opinion; others simply make an ordinary day feel lighter.\n\nThis is a placeholder for a story about friendship, family, strangers, kindness or the small ways people shape our lives. Replace this sample with your own words.",
       "image": "",
       "video": "",
       "audio": "",
       "alt": "",
-      "enabled": true
+      "enabled": true,
+      "shelf": "people",
+      "demo": true
+    },
+    {
+      "collection": "journal",
+      "mediaType": "Journal entry",
+      "title": "A pause to notice the world",
+      "date": "DEMO",
+      "text": "DEMO ENTRY · EDIT ME\n\nThere is something lovely about stepping outside without a plan. A changing sky, a tree moving in the wind, the sound of rain or a stretch of water can make you stop for a moment.\n\nUse this page for your nature notes, favourite places, little observations and photographs. This paragraph is sample text only.",
+      "image": "",
+      "video": "",
+      "audio": "",
+      "alt": "",
+      "enabled": true,
+      "shelf": "nature",
+      "demo": true
+    },
+    {
+      "collection": "journal",
+      "mediaType": "Journal entry",
+      "title": "Ideas on the back of an envelope",
+      "date": "DEMO",
+      "text": "DEMO ENTRY · EDIT ME\n\nA collection of beginnings: a line for a poem, a sketch that needs another evening, a tune recorded before it disappears, or an idea that might become something later.\n\nThis is a sample creative note. Add your own drafts, unfinished thoughts and experiments here.",
+      "image": "",
+      "video": "",
+      "audio": "",
+      "alt": "",
+      "enabled": true,
+      "shelf": "creative",
+      "demo": true
+    },
+    {
+      "collection": "journal",
+      "mediaType": "Journal entry",
+      "title": "Things I am still learning",
+      "date": "DEMO",
+      "text": "DEMO ENTRY · EDIT ME\n\nLearning rarely happens in a straight line. Sometimes progress looks like trying again, asking a better question or accepting that an old way of thinking no longer fits.\n\nThis sample page can hold lessons from work, books, travel, relationships and everyday life. Replace it with your own reflections.",
+      "image": "",
+      "video": "",
+      "audio": "",
+      "alt": "",
+      "enabled": true,
+      "shelf": "learning",
+      "demo": true
+    },
+    {
+      "collection": "journal",
+      "mediaType": "Journal entry",
+      "title": "The miscellaneous drawer",
+      "date": "DEMO",
+      "text": "DEMO ENTRY · EDIT ME\n\nA place for the thoughts that refuse to fit into neat categories: a passing observation, a funny moment, a question, a list or a memory worth saving.\n\nThis is deliberately a flexible placeholder. Make it yours whenever you are ready.",
+      "image": "",
+      "video": "",
+      "audio": "",
+      "alt": "",
+      "enabled": true,
+      "shelf": "misc",
+      "demo": true
     }
   ]
 }
