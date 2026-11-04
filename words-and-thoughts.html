@@ -24,11 +24,27 @@ h1{margin:12px 0 8px;font:500 clamp(3.5rem,9vw,7rem)/.86 var(--serif);letter-spa
 .empty{padding:28px;border:1px dashed var(--line);color:var(--muted)}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);text-align:center;font:500 .65rem var(--mono);letter-spacing:.12em;text-transform:uppercase}
 @media(max-width:600px){.page{width:calc(100% - 28px);padding-top:16px}.hero{padding:44px 0 24px}.entry{padding:21px}.entry-body{font-size:.95rem;line-height:1.68}}
+
+body{background:radial-gradient(circle at 90% 12%,rgba(180,139,104,.15),transparent 27%),linear-gradient(135deg,#efe5e8,#f4eaeb 55%,#eadce0)}
+.hero{position:relative;padding:clamp(54px,9vw,96px) 0 34px}
+.hero:after{content:"“";position:absolute;right:5%;top:0;color:rgba(134,86,107,.13);font:clamp(9rem,22vw,18rem)/1 var(--serif);pointer-events:none}
+h1{max-width:760px;font-size:clamp(4rem,10vw,8rem)}
+.entries{gap:22px;padding-top:34px}
+.entry{position:relative;overflow:hidden;padding:clamp(24px,4vw,46px);border-radius:3px 16px 16px 3px;box-shadow:0 16px 35px rgba(62,45,53,.075)}
+.entry:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(var(--wine),#c7a58e)}
+.entry:nth-child(even){margin-left:clamp(0px,5vw,64px);background:#f6ecee}
+.entry-meta{display:flex;align-items:center;gap:10px}.entry-meta:before{content:"";width:24px;height:1px;background:var(--gold)}
+.entry h2{font-size:clamp(2.3rem,5vw,3.7rem);max-width:700px;margin:12px 0 20px}
+.entry-body{font-size:1rem;line-height:1.78;max-width:760px}
+.entry-body p{margin-bottom:1em}
+.empty{background:rgba(255,255,255,.38);padding:34px;border-radius:12px}
+@media(max-width:600px){.entry:nth-child(even){margin-left:0}.hero:after{right:0;top:16px;opacity:.65}}
+
 </style>
 </head>
 <body><main class="page">
 <div class="topline"><a href="index.html">← Creative Side</a><span style="display:flex;flex-wrap:wrap;gap:12px"><a href="art-gallery.html">Art</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="travel-diaries.html">Travel</a><a href="creative-experiments.html">Experiments</a></span></div>
-<header class="hero"><div class="kicker">Notes from the margins</div><h1>Words &amp; Thoughts.</h1><p>A place for reflections, observations, personal essays and thoughts worth putting into words.</p></header>
+<header class="hero"><div class="kicker">05 / Notes from the margins</div><h1>Words &amp; Thoughts.</h1><p>A place for reflections, observations, personal essays and thoughts worth putting into words.</p></header>
 <section class="entries" id="entries" aria-live="polite"><div class="empty">Loading writing…</div></section>
 <footer><a href="index.html">Back to Creative Side</a></footer>
 </main>
