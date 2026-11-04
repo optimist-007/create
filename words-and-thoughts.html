@@ -98,25 +98,94 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 @media(max-width:900px){main.wrap,main.page{width:calc(100% - 40px)!important;padding-top:10px!important}.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:10px!important;margin-bottom:18px!important}.creative-nav .nav-pages{justify-content:flex-start!important;flex-wrap:wrap!important;gap:8px 18px!important}}
 @media(max-width:520px){main.wrap,main.page{width:calc(100% - 32px)!important;padding-top:8px!important}.creative-nav{font-size:10px!important}.creative-nav .nav-pages{gap:7px 13px!important}}
 
+ 
+/* Words & Thoughts: six-page index and open-book reading experience */
+.hero{padding:clamp(38px,6vw,64px) 0 22px!important;max-width:100%!important}
+.hero h1{font-size:clamp(3.7rem,8vw,7rem)!important;line-height:.82!important}
+.hero h1 span{color:var(--gold);font-style:italic}
+.hero p{max-width:620px!important}
+.word-flourish{margin-top:22px;color:var(--wine);font:italic 1.05rem var(--serif);letter-spacing:.04em}
+.thought-index{padding:28px 0 20px;border-top:1px solid var(--line)}
+.thought-index-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.index-note{font:italic 1rem var(--serif);color:var(--muted)}
+.thought-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.thought-tile{position:relative;min-height:145px;padding:16px 18px;text-align:left;border:1px solid var(--line);background:linear-gradient(145deg,#fbf5f5,#f0e3e7);color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.thought-tile:nth-child(2),.thought-tile:nth-child(5){background:linear-gradient(145deg,#f8f0e8,#eee1d8)}
+.thought-tile:nth-child(3),.thought-tile:nth-child(6){background:linear-gradient(145deg,#f1f1e9,#e4e8df)}
+.thought-tile:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(62,45,53,.09)}
+.thought-tile.active{border-color:var(--wine);box-shadow:inset 0 -3px 0 var(--wine),0 8px 20px rgba(62,45,53,.07)}
+.tile-no{position:absolute;top:13px;left:16px;font: .65rem var(--mono);letter-spacing:.12em;color:var(--muted)}
+.tile-icon{position:absolute;right:17px;top:9px;font:2.5rem var(--serif);color:var(--wine);opacity:.72}
+.thought-tile strong{font:500 clamp(1.35rem,2.3vw,2rem)/1 var(--serif);margin-bottom:6px}
+.thought-tile small{font: .76rem/1.4 var(--sans);color:var(--muted)}
+.turn-note{display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 0 2px;color:var(--muted);font: .65rem var(--mono);letter-spacing:.13em;text-transform:uppercase}
+.turn-note span{font-size:1.2rem;color:var(--wine)}
+.open-book{position:relative;display:grid;grid-template-columns:.78fr 1.22fr;margin:20px 0 0;background:#f8f0e9;border:1px solid rgba(62,45,53,.2);box-shadow:0 18px 40px rgba(62,45,53,.11);min-height:390px;overflow:hidden}
+.book-left,.book-right{position:relative;padding:clamp(25px,4vw,48px)}
+.book-left{background:linear-gradient(145deg,#ead9d8,#e5d1d0);display:flex;flex-direction:column;justify-content:space-between;min-height:390px}
+.book-label,.book-meta{font:.62rem var(--mono);letter-spacing:.14em;color:var(--wine);text-transform:uppercase}
+.book-leaf{font:clamp(6rem,12vw,10rem)/1 var(--serif);color:rgba(134,86,107,.3);text-align:center}
+.book-left-caption{font:italic clamp(1.3rem,2.6vw,2rem)/1.1 var(--serif);color:var(--wine);margin:0}
+.book-right{background:linear-gradient(90deg,#f3e9e2,#fbf6f0 14%);padding-bottom:56px}
+.book-right h2{font:500 clamp(2rem,4vw,3.4rem)/.98 var(--serif);margin:15px 0 20px;letter-spacing:-.035em}
+.book-text{max-width:700px;color:#514747;font: .96rem/1.8 var(--sans)}
+.book-text p{margin:0 0 1em}
+.book-page-no{position:absolute;bottom:18px;right:25px;color:rgba(62,45,53,.45);font:.62rem var(--mono)}
+.book-spine{position:absolute;z-index:2;left:39%;top:0;bottom:0;width:1px;background:rgba(62,45,53,.15);box-shadow:5px 0 12px rgba(62,45,53,.04)}
+@media(max-width:760px){.thought-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.open-book{grid-template-columns:1fr}.book-left{min-height:160px;gap:12px}.book-leaf{position:absolute;right:25px;top:25px;font-size:5rem}.book-left-caption{font-size:1.35rem}.book-spine{display:none}.book-right{min-height:280px}}
+@media(max-width:440px){.thought-grid{gap:8px}.thought-tile{min-height:130px;padding:13px}.thought-tile strong{font-size:1.3rem}.thought-tile small{font-size:.7rem}.index-note{font-size:.85rem}}
+
 </style>
 </head>
 <body>
 <main class="page">
 <nav class="creative-nav" aria-label="Creative Side navigation"><a class="nav-brand" href="index.html">CREATIVE SIDE</a><div class="nav-pages"><a href="art-gallery.html">ART GALLERY</a><a href="travel-diaries.html">TRAVEL DIARIES</a><a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a><a href="music-room.html">MUSIC ROOM</a><a href="podcast-corner.html">PODCAST CORNER</a><a href="kitchen-stories.html">KITCHEN STORIES</a></div></nav>
 
-<header class="hero"><div class="kicker">05 / Notes from the margins</div><h1>Words &amp; Thoughts.</h1><p>A place for reflections, observations, personal essays and thoughts worth putting into words.</p></header>
-<section class="entries" id="entries" aria-live="polite"><div class="empty">Loading writing…</div></section>
+<header class="hero"><div class="kicker">05 / Notes from the margins</div><h1>Words <span>&amp;</span><br>Thoughts.</h1><p>A little corner for reflections, observations, personal essays and thoughts worth putting into words. Pick a page, then settle in and read.</p><div class="word-flourish" aria-hidden="true">♡ &nbsp; thoughts, gathered gently &nbsp; ♡</div></header>
+<section class="thought-index" aria-label="Writing shelves">
+<div class="thought-index-head"><span class="kicker">THE INDEX</span><span class="index-note">Choose a page to open</span></div>
+<div class="thought-grid">
+<button class="thought-tile active" data-shelf="reflections"><span class="tile-no">01</span><span class="tile-icon">♡</span><strong>Reflections</strong><small>Things life leaves us thinking about</small></button>
+<button class="thought-tile" data-shelf="people"><span class="tile-no">02</span><span class="tile-icon">✳</span><strong>People &amp; connections</strong><small>What we learn from one another</small></button>
+<button class="thought-tile" data-shelf="nature"><span class="tile-no">03</span><span class="tile-icon">❧</span><strong>Nature &amp; places</strong><small>Small observations from the world</small></button>
+<button class="thought-tile" data-shelf="creative"><span class="tile-no">04</span><span class="tile-icon">✎</span><strong>Creative notes</strong><small>Ideas, fragments and beginnings</small></button>
+<button class="thought-tile" data-shelf="learning"><span class="tile-no">05</span><span class="tile-icon">✧</span><strong>Lessons &amp; change</strong><small>Learning, unlearning and growing</small></button>
+<button class="thought-tile" data-shelf="misc"><span class="tile-no">06</span><span class="tile-icon">…</span><strong>Everything else</strong><small>The thoughts that need their own page</small></button>
+</div>
+<div class="turn-note"><span>↓</span> Turn the page to read</div>
+</section>
+<section class="open-book" id="reading-room" aria-live="polite">
+<div class="book-spine" aria-hidden="true"></div>
+<div class="book-left"><span class="book-label">WORDS &amp; THOUGHTS · OPEN PAGE</span><div class="book-leaf">♡</div><p class="book-left-caption">A collection of things<br>worth keeping.</p><span class="book-page-no">01</span></div>
+<div class="book-right"><div class="book-meta" id="book-meta">REFLECTIONS · JOURNAL</div><h2 id="book-title">A page for reflection</h2><div class="book-text" id="entries"><div class="empty">Loading writing…</div></div><span class="book-page-no">02</span></div>
+</section>
 <footer><a href="index.html">Back to Creative Side</a></footer>
 </main>
 <script>
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function render(data){
- const entries=Array.isArray(data.mediaEntries)?data.mediaEntries.filter(x=>x&&x.enabled!==false&&String(x.collection||"").toLowerCase()==="journal"&&String(x.text||"").trim()):[];
- const host=document.getElementById("entries");
- host.innerHTML=entries.length?entries.map(x=>{
-  const paragraphs=String(x.text||"").trim().split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean);
-  return '<article class="entry"><div class="entry-meta">'+esc(x.mediaType||"Reflection")+(x.date?" · "+esc(x.date):"")+'</div><h2>'+esc(x.title||"Untitled")+'</h2><div class="entry-body">'+paragraphs.map(p=>"<p>"+esc(p).replace(/\n/g,"<br>")+"</p>").join("")+'</div></article>';
- }).join(""):'<div class="empty">New writing will find its way here.</div>';
+let journalEntries=[];
+const shelves={
+ reflections:{label:"Reflections",description:"JOURNAL · REFLECTIONS",title:"A page for reflection",match:()=>true},
+ people:{label:"People & connections",description:"PEOPLE · CONNECTIONS",title:"People & connections",match:()=>false},
+ nature:{label:"Nature & places",description:"OBSERVATIONS · PLACES",title:"Nature & places",match:()=>false},
+ creative:{label:"Creative notes",description:"IDEAS · FRAGMENTS",title:"Creative notes",match:()=>false},
+ learning:{label:"Lessons & change",description:"LEARNING · GROWTH",title:"Lessons & change",match:()=>false},
+ misc:{label:"Everything else",description:"LOOSE NOTES · OTHER THOUGHTS",title:"A little bit of everything",match:()=>false}
+};
+function showShelf(key){
+ const shelf=shelves[key]||shelves.reflections;
+ document.querySelectorAll(".thought-tile").forEach(b=>b.classList.toggle("active",b.dataset.shelf===key));
+ document.getElementById("book-meta").textContent=shelf.description;
+ const found=journalEntries.filter(shelf.match);
+ const title=document.getElementById("book-title"),body=document.getElementById("entries");
+ if(found.length){
+  title.textContent=found[0].title||shelf.title;
+  body.innerHTML=found.map(x=>String(x.text||"").trim().split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean).map(p=>"<p>"+esc(p).replace(/\n/g,"<br>")+"</p>").join("")).join("");
+ }else{
+  title.textContent=shelf.title;
+  body.innerHTML='<p class="empty">This page is waiting for the words you choose to place here.</p>';
+ }
 }
-fetch("content/creative-content.json").then(r=>{if(!r.ok)throw new Error("load");return r.json();}).then(render).catch(()=>{document.getElementById("entries").innerHTML='<div class="empty">The writing collection could not be loaded. Please refresh.</div>';});
+document.querySelectorAll(".thought-tile").forEach(b=>b.addEventListener("click",()=>{showShelf(b.dataset.shelf);document.getElementById("reading-room").scrollIntoView({behavior:"smooth",block:"start"});}));
+fetch("content/creative-content.json").then(r=>{if(!r.ok)throw new Error("load");return r.json();}).then(data=>{journalEntries=Array.isArray(data.mediaEntries)?data.mediaEntries.filter(x=>x&&x.enabled!==false&&String(x.collection||"").toLowerCase()==="journal"&&String(x.text||"").trim()):[];showShelf("reflections");}).catch(()=>{document.getElementById("entries").innerHTML='<p class="empty">The writing collection could not be loaded. Please refresh.</p>';});
 </script></body></html>
