@@ -99,6 +99,26 @@ body{background:radial-gradient(circle at 92% 8%,rgba(56,107,99,.13),transparent
 .creative-nav .nav-home{font-weight:600;letter-spacing:.13em}
 .creative-nav .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,1.8vw,22px);flex-wrap:wrap}
 @media(max-width:760px){.creative-nav{align-items:flex-start;flex-direction:column;gap:12px}.creative-nav .nav-links{justify-content:flex-start;gap:9px 17px}}
+
+/* Travel: field-journal masthead, compact jump links and photographic archive */
+body{background:#e8eee8!important}
+.page{max-width:1180px!important}
+.hero{grid-template-columns:1fr minmax(180px,270px)!important;align-items:end!important;padding:clamp(48px,7vw,82px) 0 26px!important}
+.hero h1{max-width:800px!important;font-size:clamp(4rem,9.5vw,8rem)!important}
+.hero-note{border-left:2px solid var(--wine);padding:8px 0 8px 16px!important}
+.jump-nav{display:flex!important;flex-wrap:wrap!important;gap:8px!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;padding:16px 0!important;margin:0 0 12px!important}
+.jump-nav a{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:2px;font: .65rem var(--mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--wine)}
+.archive{padding-top:24px!important}
+.post-card.featured{background:#f4f7f1!important;border:1px solid var(--line)!important;box-shadow:0 16px 36px rgba(41,61,58,.08)!important}
+.post-card.featured .post-copy{padding:clamp(22px,4vw,44px)!important;align-self:center}
+.post-card.featured .post-copy h2{font:500 clamp(2.5rem,5vw,4.2rem)/.92 var(--serif)!important}
+.extra-section{margin-top:clamp(44px,6vw,76px)!important}
+.section-heading{max-width:780px!important}
+.section-heading h2{font-size:clamp(2.7rem,6vw,5rem)!important}
+.postcard-grid{gap:18px!important}
+.postcard{background:#f7f8f2!important;padding:9px!important;box-shadow:0 10px 24px rgba(41,61,58,.08)!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr!important}.jump-nav{gap:7px!important}.post-card.featured{grid-template-columns:1fr!important}}
+
 </style></head>
 <body><main class="page">
 <nav class="creative-nav" aria-label="Creative spaces"><a class="nav-home" href="index.html">Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="creative-experiments.html">Experiments</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
