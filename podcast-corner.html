@@ -14,9 +14,28 @@ h1{font:500 clamp(3.6rem,9vw,7.7rem)/.82 var(--serif);letter-spacing:-.055em;mar
 .content{padding:34px 0}.audio-items{display:grid;gap:18px}.audio-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:24px;align-items:center;padding:15px;background:var(--paper2);border:1px solid var(--line);border-radius:14px}.player{aspect-ratio:16/9;background:#263b32;border-radius:8px;overflow:hidden}.player iframe{width:100%;height:100%;border:0}.audio-copy h2{font:500 clamp(1.8rem,3vw,2.6rem)/1 var(--serif);margin:10px 0}.audio-copy p{color:var(--muted);font-size:.9rem}.empty{padding:30px;border:1px dashed var(--line);background:rgba(255,255,255,.18);color:var(--muted);max-width:760px}.empty strong{display:block;font:500 1.8rem var(--serif);color:var(--ink);margin-bottom:6px}
 footer{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font:500 .62rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
 @media(max-width:700px){.audio-card{grid-template-columns:1fr;gap:14px}}@media(max-width:620px){.page{width:calc(100% - 28px);padding-top:14px}.top{align-items:flex-start;flex-direction:column}.hero{padding:48px 0 26px}.orbit{right:0;top:14%;opacity:.18}.empty{padding:22px}footer{flex-direction:column}}
+
+body{background:radial-gradient(circle at 88% 15%,rgba(79,120,102,.17),transparent 28%),linear-gradient(145deg,var(--paper),var(--paper2))}
+.hero{min-height:330px;display:flex;flex-direction:column;justify-content:center;padding-left:clamp(8px,3vw,38px)}
+.hero:before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,#4f7866,transparent);opacity:.55}
+.orbit{width:clamp(150px,26vw,270px);right:5%;top:10%;border-width:2px;box-shadow:0 0 0 14px rgba(79,120,102,.06),0 0 0 30px rgba(79,120,102,.035)} 
+.content{padding:38px 0}
+.content>.label{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.content>.label:after{content:"";height:1px;flex:1;background:var(--line)}
+.audio-card{border-radius:4px 18px 4px 18px;padding:17px;background:linear-gradient(135deg,var(--paper2),rgba(255,255,255,.68));box-shadow:0 16px 35px rgba(35,35,45,.09);transition:transform .2s ease}
+.audio-card:hover{transform:translateY(-3px)}
+.player{position:relative;border-radius:4px 12px 4px 12px;box-shadow:0 8px 22px rgba(0,0,0,.12)}
+.audio-copy{padding:12px 8px}
+.audio-copy h2{font-size:clamp(2.2rem,4vw,3.2rem)}
+.audio-copy .label{letter-spacing:.17em}
+.empty{max-width:none;border-radius:4px 18px 4px 18px;padding:clamp(28px,5vw,48px);background:linear-gradient(130deg,rgba(255,255,255,.62),rgba(255,255,255,.2))}
+.empty strong{font-size:clamp(2rem,4vw,3rem)}
+@media(min-width:900px){.audio-card{grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr)}}
+@media(max-width:620px){.hero{min-height:270px;padding-left:0}.orbit{right:-25px;top:10%;opacity:.16}}
+
 </style><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; img-src 'self' data:; frame-src https://www.youtube-nocookie.com; base-uri 'self'; form-action 'none'"></head><body><main class="page">
 <div class="top"><a href="index.html">← Creative Side</a><nav><a href="art-gallery.html">Art</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="creative-experiments.html">Experiments</a></nav></div>
-<header class="hero"><div class="orbit" aria-hidden="true"></div><div class="eyebrow">Conversations · episodes · audio</div><h1>Podcast Corner</h1><p>Recorded conversations, podcast episodes and spoken thoughts. Press play, settle in and stay for a while.</p></header>
+<header class="hero"><div class="orbit" aria-hidden="true"></div><div class="eyebrow">03 / Conversations · episodes · audio</div><h1>Podcast Corner</h1><p>Recorded conversations, podcast episodes and spoken thoughts. Press play, settle in and stay for a while.</p></header>
 <section class="content"><div class="label">The episode archive</div><div class="audio-items" id="audioItems"><div class="empty">Loading episodes…</div></div></section><script>
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function videoId(url){try{const u=new URL(url);if(u.hostname==="youtu.be")return u.pathname.slice(1);if(u.hostname.endsWith("youtube.com"))return u.searchParams.get("v")||u.pathname.split("/").filter(Boolean).pop();}catch(e){}return "";}
