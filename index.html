@@ -830,7 +830,7 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
         <a href="./art-gallery.html">Art Gallery</a>
         <a href="#obsessions">Now</a>
         <a href="travel-diaries.html">Travel Diaries</a>
-        <a href="#journalRandomThoughts">Journal</a>
+        <a href="words-and-thoughts.html">Words &amp; Thoughts</a>
         <a href="index.html#future">Stories</a>
       </div>
     </div>
@@ -961,14 +961,6 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
   
 
 </main>
-
-  <div id="journalRandomThoughts" class="journal-bottom">
-    <div class="journal-bottom-head">
-      <div class="eyebrow">Journal / random thoughts</div>
-    </div>
-    <div id="journalShelf"></div>
-  </div>
-
 <div class="modal" id="modal" aria-hidden="true">
   <div class="dialog" role="dialog" aria-modal="true" aria-label="Full review">
     <div class="dialog-image" id="dialogImage"></div>
@@ -1359,7 +1351,6 @@ async function load(){
   renderReviews();
   renderObsessions(d);
   renderFuture(d);
-  renderJournalShelf(d);
   renderTravelDiaries(d);
   document.body.classList.add('js-ready');
   observeReveals();
