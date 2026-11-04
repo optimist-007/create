@@ -1,18 +1,52 @@
 {
   "music": [
     {
-      "title": "Malayalam recording · Sample cassette",
+      "title": "Mazhayil · Sample recording",
       "language": "Malayalam",
-      "year": "DEMO YEAR",
+      "year": "2024 · DEMO",
       "youtube": "",
-      "description": "MOCK ENTRY ONLY. Replace with the actual recording link and year."
+      "description": "DEMO CASSETTE. A placeholder for a Malayalam song recording. Add the real audio link and correct year when ready.",
+      "demo": true
     },
     {
-      "title": "English recording · Sample cassette",
-      "language": "English",
-      "year": "DEMO YEAR",
+      "title": "Ormakal · Sample melody",
+      "language": "Malayalam",
+      "year": "2023 · DEMO",
       "youtube": "",
-      "description": "MOCK ENTRY ONLY. Replace with the actual recording link and year."
+      "description": "DEMO CASSETTE. A second Malayalam recording placeholder. Replace the title, year and audio link.",
+      "demo": true
+    },
+    {
+      "title": "Manassinakkare · Acoustic take",
+      "language": "Malayalam",
+      "year": "2022 · DEMO",
+      "youtube": "",
+      "description": "DEMO CASSETTE. An extra shelf entry to show how the Malayalam collection will look.",
+      "demo": true
+    },
+    {
+      "title": "A little light · Sample recording",
+      "language": "English",
+      "year": "2024 · DEMO",
+      "youtube": "",
+      "description": "DEMO CASSETTE. A placeholder for an English song recording. Add the real audio link and correct year when ready.",
+      "demo": true
+    },
+    {
+      "title": "Somewhere in between · Sample",
+      "language": "English",
+      "year": "2023 · DEMO",
+      "youtube": "",
+      "description": "DEMO CASSETTE. A second English recording placeholder. Replace the title, year and audio link.",
+      "demo": true
+    },
+    {
+      "title": "The quiet hours · Acoustic take",
+      "language": "English",
+      "year": "2022 · DEMO",
+      "youtube": "",
+      "description": "DEMO CASSETTE. An extra shelf entry to show how the English collection will look.",
+      "demo": true
     }
   ],
   "podcasts": [
@@ -20,44 +54,89 @@
       "title": "My first podcast · Motivation",
       "category": "Motivation",
       "topics": [
-        "Motivation",
-        "Personal growth"
+        "Goals",
+        "Discipline",
+        "Confidence",
+        "Starting again",
+        "Learning & growth",
+        "Creative life"
       ],
       "youtube": "",
-      "description": "MOCK LISTING ONLY. This is the first podcast recording you identified. Add its hosted audio or video link to enable playback.",
+      "description": "DEMO LISTING FOR YOUR FIRST MOTIVATION PODCAST. This keeps the first episode slot you identified. Add the real recording file or hosted link to enable playback.",
+      "demo": true
+    },
+    {
+      "title": "Starting before you feel ready",
+      "category": "Motivation",
+      "topics": [
+        "Goals",
+        "Confidence",
+        "Starting again"
+      ],
+      "youtube": "",
+      "description": "DEMO EPISODE. A short conversation about beginning imperfectly, building confidence and taking the first step.",
       "demo": true
     },
     {
       "title": "Small steps, steady progress",
       "category": "Motivation",
       "topics": [
-        "Motivation",
-        "Personal growth"
+        "Discipline",
+        "Learning & growth"
       ],
       "youtube": "",
-      "description": "DEMO TOPIC PLACEHOLDER. Replace this title and description with a real episode when ready.",
+      "description": "DEMO EPISODE. A sample discussion about routines, consistency and making progress without rushing.",
       "demo": true
     },
     {
-      "title": "Everyday life conversations",
+      "title": "A little life update",
       "category": "Daily life",
       "topics": [
-        "Daily life",
-        "Stories"
+        "Friendship",
+        "Relationships",
+        "Family",
+        "Everyday stories",
+        "Personal experiences"
       ],
       "youtube": "",
-      "description": "DEMO TOPIC PLACEHOLDER. Replace this title and description with a real episode when ready.",
+      "description": "DEMO EPISODE. A relaxed catch-up about ordinary days, friendships, family moments and small stories.",
       "demo": true
     },
     {
-      "title": "A completely random conversation",
-      "category": "Random",
+      "title": "Work, study and everything between",
+      "category": "Daily life",
       "topics": [
-        "Random",
-        "Fun"
+        "Work & study",
+        "Personal experiences",
+        "Everyday stories"
       ],
       "youtube": "",
-      "description": "DEMO TOPIC PLACEHOLDER. Replace this title and description with a real episode when ready.",
+      "description": "DEMO EPISODE. A sample conversation about balancing responsibilities, learning and making space for yourself.",
+      "demo": true
+    },
+    {
+      "title": "Things we never plan to talk about",
+      "category": "Random",
+      "topics": [
+        "Unexpected conversations",
+        "Curiosities",
+        "Light-hearted chats",
+        "Anything goes"
+      ],
+      "youtube": "",
+      "description": "DEMO EPISODE. A playful collection of unexpected questions, curious thoughts and light-hearted tangents.",
+      "demo": true
+    },
+    {
+      "title": "A question, three opinions",
+      "category": "Random",
+      "topics": [
+        "Unexpected conversations",
+        "Curiosities",
+        "Anything goes"
+      ],
+      "youtube": "",
+      "description": "DEMO EPISODE. Pick a random question and follow the conversation wherever it wanders.",
       "demo": true
     }
   ]
