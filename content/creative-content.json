@@ -197,5 +197,40 @@
       "alt": "",
       "enabled": true
     }
-  ]
+  ],
+  "currentChapter": {
+    "intro": "",
+    "entries": [
+      {
+        "id": "reading",
+        "category": "Currently reading",
+        "title": "The Golden Notebook",
+        "byline": "Doris Lessing · Goodreads 3.77/5 · 25,528 ratings",
+        "note": "",
+        "image": "",
+        "link": "https://www.goodreads.com/book/show/1411020",
+        "updated": ""
+      },
+      {
+        "id": "noticing",
+        "category": "Small things I've noticed",
+        "title": "",
+        "byline": "",
+        "note": "I am finally happy being a jack of all trades and master of none.",
+        "image": "",
+        "link": "",
+        "updated": ""
+      },
+      {
+        "id": "indulged",
+        "category": "Currently indulged in",
+        "title": "",
+        "byline": "",
+        "note": "Making my own Pinterest-y clothes.",
+        "image": "",
+        "link": "",
+        "updated": ""
+      }
+    ]
+  }
 }
