@@ -89,6 +89,7 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 @media(max-width:900px){main.wrap,main.page{width:calc(100% - 40px)!important;padding-top:10px!important}.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:10px!important;margin-bottom:18px!important}.creative-nav .nav-pages{justify-content:flex-start!important;flex-wrap:wrap!important;gap:8px 18px!important}}
 @media(max-width:520px){main.wrap,main.page{width:calc(100% - 32px)!important;padding-top:8px!important}.creative-nav{font-size:10px!important}.creative-nav .nav-pages{gap:7px 13px!important}}
 
+.demo-player{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:radial-gradient(circle at 50% 40%,#d7b7a0,#8d6c61 72%);color:#fff8ed;text-align:center}.demo-player span{font-size:42px}.demo-player strong{font:11px var(--mono);letter-spacing:.14em}.demo-player small{font-size:11px;opacity:.85}
 </style></head><body>
 <main class="page">
 <nav class="creative-nav" aria-label="Creative Side navigation"><a class="nav-brand" href="index.html">CREATIVE SIDE</a><div class="nav-pages"><a href="art-gallery.html">ART GALLERY</a><a href="travel-diaries.html">TRAVEL DIARIES</a><a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a><a href="music-room.html">MUSIC ROOM</a><a href="podcast-corner.html">PODCAST CORNER</a><a href="kitchen-stories.html">KITCHEN STORIES</a></div></nav>
@@ -113,7 +114,15 @@ const $=id=>document.getElementById(id);let episodes=[],activeCategory="All",act
 const topics={"Daily life":["Friendship","Relationships","Family","Work & study","Everyday stories","Personal experiences"],"Motivation":["Goals","Discipline","Confidence","Starting again","Learning & growth","Creative life"],"Random":["Unexpected conversations","Curiosities","Light-hearted chats","Anything goes"]};
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function idOf(url){try{const u=new URL(url);if(u.hostname==="youtu.be")return u.pathname.slice(1);if(u.hostname.endsWith("youtube.com"))return u.searchParams.get("v")||u.pathname.split("/").filter(Boolean).pop()}catch(e){}return""}
-function render(list,title){$("episodeTitle").textContent=title;$("episodeCount").textContent=list.length+" EPISODES";$("episodeGrid").innerHTML=list.length?'<div class="episode-grid">'+list.map((x,i)=>{const id=idOf(x.youtube);return id?'<article class="episode"><div class="player"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'" title="'+esc(x.title||"Podcast episode")+'" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div><div class="label">'+esc(x.category||"PODCAST")+' · '+String(i+1).padStart(2,"0")+'</div><h3>'+esc(x.title||"Untitled episode")+'</h3><p>'+esc(x.description||"")+'</p></article>':""}).join("")+'</div>':'<div class="empty">No episodes match this selection yet. Choose another topic or browse all episodes.</div>'}
+function render(list,title){
+ $("episodeTitle").textContent=title;
+ $("episodeCount").textContent=list.length+" EPISODES";
+ $("episodeGrid").innerHTML=list.length?'<div class="episode-grid">'+list.map((x,i)=>{
+  const id=idOf(x.youtube);
+  const player=id?'<div class="player"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'" title="'+esc(x.title||"Podcast episode")+'" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>':'<div class="player demo-player"><span>♫</span><strong>DEMO AUDIO SLOT</strong><small>Replace with your recording link</small></div>';
+  return '<article class="episode">'+player+'<div class="label">'+esc(x.category||"PODCAST")+' · '+String(i+1).padStart(2,"0")+(x.demo?' · DEMO':'')+'</div><h3>'+esc(x.title||"Untitled episode")+'</h3><p>'+esc(x.description||"")+'</p></article>';
+ }).join("")+'</div>':'<div class="empty">No episodes match this selection yet. Choose another topic or browse all episodes.</div>';
+}
 function openPicker(category){activeCategory=category;$("modalTitle").textContent=category;$("modalPrompt").textContent=category==="Random"?"Pick the kind of unexpected conversation you feel like hearing.":"Choose one or more topics. You can change this selection any time.";const opts=topics[category];$("topicList").innerHTML=opts.map(t=>'<label class="topic"><input type="checkbox" value="'+esc(t)+'"><span>'+esc(t)+'</span></label>').join("");$("topicDialog").showModal()}
 document.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>openPicker(b.dataset.category)));
 document.querySelector(".close").addEventListener("click",()=>$("topicDialog").close());document.querySelector(".cancel").addEventListener("click",()=>$("topicDialog").close());
