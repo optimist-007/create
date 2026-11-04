@@ -5,8 +5,9 @@
       "language": "Malayalam",
       "year": "2024 · DEMO",
       "youtube": "",
-      "description": "DEMO CASSETTE. A placeholder for a Malayalam song recording. Add the real audio link and correct year when ready.",
-      "demo": true
+      "description": "DEMO / MOCK AUDIO FOR TESTING ONLY. Malayalam cassette player test.",
+      "demo": true,
+      "audio": "assets/audio/bensound-melancholylull.mp3"
     },
     {
       "title": "Ormakal · Sample melody",
@@ -29,8 +30,9 @@
       "language": "English",
       "year": "2024 · DEMO",
       "youtube": "",
-      "description": "DEMO CASSETTE. A placeholder for an English song recording. Add the real audio link and correct year when ready.",
-      "demo": true
+      "description": "DEMO / MOCK AUDIO FOR TESTING ONLY. English cassette player test.",
+      "demo": true,
+      "audio": "assets/audio/bensound-slowlife.mp3"
     },
     {
       "title": "Somewhere in between · Sample",
@@ -62,8 +64,9 @@
         "Creative life"
       ],
       "youtube": "",
-      "description": "DEMO LISTING FOR YOUR FIRST MOTIVATION PODCAST. This keeps the first episode slot you identified. Add the real recording file or hosted link to enable playback.",
-      "demo": true
+      "description": "DEMO / MOCK AUDIO FOR TESTING ONLY. First podcast player test.",
+      "demo": true,
+      "audio": "assets/audio/bensound-firesidechat.mp3"
     },
     {
       "title": "Starting before you feel ready",
