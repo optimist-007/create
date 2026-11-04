@@ -15,9 +15,59 @@
 dialog{border:1px solid #aab39f;background:#f5f1e6;color:var(--ink);width:min(540px,calc(100% - 28px));padding:0;box-shadow:0 25px 80px #25382e55}dialog::backdrop{background:#26382f88;backdrop-filter:blur(4px)}.modal-head{padding:20px 22px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:start;gap:12px}.modal-head h3{font:500 30px var(--serif);margin:0}.close{border:0;background:transparent;font-size:24px;cursor:pointer;color:var(--ink)}.modal-body{padding:18px 22px}.topic-list{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.topic{display:flex;align-items:center;gap:9px;background:#e8eadf;padding:11px;border:1px solid #d0d5c8;font-size:13px}.topic input{accent-color:#71816b;width:16px;height:16px}.modal-actions{display:flex;justify-content:flex-end;gap:10px;padding:0 22px 20px}.modal-actions button{padding:10px 15px;border:1px solid #81907b;background:#71816b;color:white;cursor:pointer;font:11px var(--mono);text-transform:uppercase}.modal-actions .cancel{background:transparent;color:var(--ink)}
 footer{border-top:1px solid var(--line);padding-top:14px;margin-top:32px;display:flex;justify-content:space-between;color:var(--muted);font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em}
 @media(max-width:680px){.page{width:calc(100% - 24px)}.creative-nav{align-items:start;flex-direction:column}.lounge{min-height:330px}.lounge-copy{padding:38px 7% 190px}.sofa{left:17%;width:62%;height:100px}.plant{transform:scale(.8);transform-origin:bottom left}.choices{grid-template-columns:1fr;gap:10px}.choice{min-height:58px}.episode-grid{grid-template-columns:1fr}.topic-list{grid-template-columns:1fr 1fr}footer{flex-direction:column}}
+
+/* Podcast room illustration: visual scene and editorial copy are deliberately separate */
+.podcast-scene{height:clamp(390px,53vw,570px);margin-top:24px;position:relative;overflow:hidden;border:1px solid #aeb9a9;background:linear-gradient(180deg,#d8e5dc 0%,#e8e5d4 60%,#b9a88f 60%,#c8b99f 100%);box-shadow:0 18px 40px rgba(47,65,51,.12)}
+.scene-window{position:absolute;inset:5% 7% 27%;overflow:hidden;border:13px solid #f4eee0;background:linear-gradient(180deg,#c8e0dc 0%,#e9e5c9 65%,#a9b99a 66%);box-shadow:0 0 0 2px #a58d70}
+.scene-sun{position:absolute;width:70px;height:70px;border-radius:50%;background:#f4d49a;right:18%;top:16%;box-shadow:0 0 45px #f4d49a88}
+.scene-hill{position:absolute;bottom:0;width:130%;height:48%;border-radius:50% 50% 0 0}
+.hill-back{left:-15%;background:#8ca995;transform:rotate(-5deg)}
+.hill-front{left:20%;height:36%;background:#718d77;transform:rotate(4deg)}
+.window-cross{position:absolute;background:#f4eee0;z-index:2}.window-cross.vertical{height:100%;width:9px;left:50%;top:0}.window-cross.horizontal{height:9px;width:100%;left:0;top:54%}
+.scene-plant{position:absolute;bottom:23%;width:100px;height:170px;z-index:3}
+.scene-plant b{position:absolute;bottom:0;left:31px;width:42px;height:46px;border-radius:3px 3px 12px 12px;background:#a77d5b}
+.scene-plant i{position:absolute;bottom:35px;left:45px;width:24px;height:80px;border-radius:100% 0 100% 0;background:#66836a;transform-origin:bottom center}
+.scene-plant i:nth-child(1){transform:rotate(-50deg)}.scene-plant i:nth-child(2){transform:rotate(-22deg);height:110px}.scene-plant i:nth-child(3){transform:rotate(25deg);height:100px}.scene-plant i:nth-child(4){transform:rotate(52deg)}
+.plant-left{left:2%}.plant-right{right:2%;transform:scale(1.1)}
+.person{position:absolute;bottom:25%;width:23%;height:48%;z-index:4}
+.person-you{left:17%}.person-me{right:17%}
+.person .head{position:absolute;top:2%;left:34%;width:31%;aspect-ratio:1;border-radius:48% 48% 45% 45%;background:#bd8868;z-index:2}
+.person .hair{position:absolute;top:0;left:30%;width:39%;height:20%;border-radius:55% 55% 25% 25%;background:#554337;z-index:3}
+.person-me .hair{background:#3e3832}
+.person .body-shape{position:absolute;bottom:0;left:13%;width:74%;height:67%;border-radius:48% 48% 10% 10%;background:#728779}
+.person-me .body-shape{background:#b47e63}
+.seat-tag{position:absolute;top:25%;left:50%;transform:translateX(-50%);z-index:7;padding:5px 14px;background:#f7f1e5;border:1px solid #aab3a2;color:#425447;font:10px var(--mono);letter-spacing:.16em}
+.podcast-table{position:absolute;z-index:6;left:25%;right:25%;bottom:17%;height:25%}
+.table-top{position:absolute;left:-5%;right:-5%;top:0;height:28%;border-radius:50%;background:#89684d;border:5px solid #74553f;box-shadow:0 9px 12px #59453233}
+.table-leg{position:absolute;left:42%;right:42%;top:19%;bottom:-22%;background:#89684d}
+.mic{position:absolute;z-index:8;bottom:43%;width:36px;height:80px}
+.mic-you{left:34%}.mic-me{right:34%}
+.mic span{display:block;width:22px;height:37px;margin:auto;border-radius:12px;background:#343d3a;border:3px solid #65736b}
+.mic b{display:block;width:5px;height:35px;background:#4a514b;margin:auto;box-shadow:12px 0 #4a514b,-12px 0 #4a514b}
+.scene-rug{position:absolute;bottom:3%;left:20%;width:60%;height:10%;border-radius:50%;background:#d9c9a9}
+.dog{position:absolute;z-index:7;right:7%;bottom:13%;width:105px;height:80px}
+.dog-body{position:absolute;bottom:0;left:15px;width:72px;height:43px;border-radius:48% 48% 35% 35%;background:#c79c6c}
+.dog-face{position:absolute;top:3px;left:43px;width:38px;height:38px;border-radius:45%;background:#c79c6c}
+.dog-ear{position:absolute;z-index:2;top:0;left:42px;width:18px;height:28px;border-radius:80% 10% 80% 20%;background:#8e674b;transform:rotate(-20deg)}
+.dog-tail{position:absolute;left:7px;bottom:29px;width:27px;height:9px;border-radius:10px;background:#8e674b;transform:rotate(-35deg)}
+.scene-caption{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);white-space:nowrap;color:#f9f5e9;font:italic 15px var(--serif);text-shadow:0 1px 5px #39493b}
+.podcast-intro{padding:32px 2px 8px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr minmax(220px,.7fr);column-gap:24px;align-items:end}
+.podcast-intro .eyebrow{grid-column:1/-1}.podcast-intro h1{font:500 clamp(2.8rem,6vw,5rem)/.9 var(--serif);letter-spacing:-.04em;margin:8px 0 0}.podcast-intro p{margin:0 0 4px;max-width:380px;color:var(--muted)}
+.listen{padding-top:34px!important}.listen h2{margin-top:6px!important}
+@media(max-width:680px){.podcast-scene{height:390px}.person-you{left:9%;width:29%}.person-me{right:9%;width:29%}.podcast-table{left:20%;right:20%;bottom:19%}.mic-you{left:30%;bottom:45%}.mic-me{right:30%;bottom:45%}.plant-left{transform:scale(.75);transform-origin:bottom left;left:-10px}.plant-right{transform:scale(.75);transform-origin:bottom right;right:-10px}.dog{right:3%;transform:scale(.75);transform-origin:bottom right}.scene-caption{font-size:12px}.podcast-intro{grid-template-columns:1fr}.podcast-intro p{margin-top:10px}}
 </style></head><body><main class="page">
 <nav class="creative-nav" aria-label="Creative spaces"><a href="index.html">← Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
-<section class="lounge"><div class="window"></div><div class="plant"></div><div class="sofa"></div><div class="rug"></div><div class="side-table"></div><div class="lamp"></div><div class="lounge-copy"><div class="eyebrow">03 / Conversations · stories · voices</div><h1>Podcast<br>Corner</h1><p>A soft little room to settle into. Pick a mood, find a conversation, and stay for a while.</p></div></section>
+<section class="podcast-scene" aria-label="Illustrated podcast room with two people seated across a table, microphones, plants, a dog and a scenic view">
+<div class="scene-window"><div class="scene-hill hill-back"></div><div class="scene-hill hill-front"></div><div class="scene-sun"></div><div class="window-cross vertical"></div><div class="window-cross horizontal"></div></div>
+<div class="scene-plant plant-left"><i></i><i></i><i></i><i></i><b></b></div><div class="scene-plant plant-right"><i></i><i></i><i></i><i></i><b></b></div>
+<div class="person person-you"><div class="head"></div><div class="hair"></div><div class="body-shape"></div><span class="seat-tag">YOU</span></div>
+<div class="person person-me"><div class="head"></div><div class="hair"></div><div class="body-shape"></div><span class="seat-tag">ME</span></div>
+<div class="mic mic-you"><span></span><b></b></div><div class="mic mic-me"><span></span><b></b></div>
+<div class="podcast-table"><div class="table-top"></div><div class="table-leg"></div></div>
+<div class="dog"><span class="dog-ear"></span><span class="dog-face"></span><span class="dog-body"></span><span class="dog-tail"></span></div>
+<div class="scene-rug"></div><span class="scene-caption">A seat for you. A seat for me. And a little time to talk.</span>
+</section>
+<header class="podcast-intro"><div class="eyebrow">03 / Conversations · stories · voices</div><h1>Podcast Corner</h1><p>Pull up a chair. Choose a mood, find a conversation, and stay for a while.</p></header>
 <section class="listen"><div class="eyebrow">Settle in and choose</div><h2>What do you want to listen to?</h2><div class="choices"><button class="choice" data-category="Daily life">Daily life</button><button class="choice" data-category="Motivation">Motivation</button><button class="choice" data-category="Random">Random</button></div></section>
 <section class="episodes"><div class="episodes-head"><div><div class="eyebrow">From the sofa</div><h2 id="episodeTitle">The listening shelf</h2></div><span class="label" id="episodeCount">ALL EPISODES</span></div><div id="episodeGrid"><div class="empty">Your conversations will appear here.</div></div></section>
 <dialog id="topicDialog"><div class="modal-head"><div><div class="eyebrow">Choose your listening mood</div><h3 id="modalTitle">Daily life</h3></div><button class="close" type="button" aria-label="Close">×</button></div><div class="modal-body"><p id="modalPrompt">Choose one or more topics to narrow the episode list.</p><div class="topic-list" id="topicList"></div></div><div class="modal-actions"><button class="cancel" type="button">Cancel</button><button id="applyTopics" type="button">Show episodes</button></div></dialog>
