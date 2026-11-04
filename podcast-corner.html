@@ -55,8 +55,28 @@ footer{border-top:1px solid var(--line);padding-top:14px;margin-top:32px;display
 .podcast-intro .eyebrow{grid-column:1/-1}.podcast-intro h1{font:500 clamp(2.8rem,6vw,5rem)/.9 var(--serif);letter-spacing:-.04em;margin:8px 0 0}.podcast-intro p{margin:0 0 4px;max-width:380px;color:var(--muted)}
 .listen{padding-top:34px!important}.listen h2{margin-top:6px!important}
 @media(max-width:680px){.podcast-scene{height:390px}.person-you{left:9%;width:29%}.person-me{right:9%;width:29%}.podcast-table{left:20%;right:20%;bottom:19%}.mic-you{left:30%;bottom:45%}.mic-me{right:30%;bottom:45%}.plant-left{transform:scale(.75);transform-origin:bottom left;left:-10px}.plant-right{transform:scale(.75);transform-origin:bottom right;right:-10px}.dog{right:3%;transform:scale(.75);transform-origin:bottom right}.scene-caption{font-size:12px}.podcast-intro{grid-template-columns:1fr}.podcast-intro p{margin-top:10px}}
+
+/* Shared navigation system: identical structure, spacing and link behaviour on every page */
+.creative-nav{position:relative!important;z-index:20!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;width:100%!important;box-sizing:border-box!important;margin:0 0 26px!important;padding:15px 0 16px!important;border:0!important;border-bottom:1px solid rgba(85,91,79,.28)!important;border-radius:0!important;background:transparent!important;font:500 11px/1.35 Arial,sans-serif!important;letter-spacing:.045em!important;text-transform:none!important}
+.creative-nav a{display:inline-flex!important;align-items:center!important;min-height:28px!important;padding:5px 0!important;color:inherit!important;text-decoration:none!important;white-space:nowrap!important;opacity:.86!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transition:opacity .18s ease,border-color .18s ease!important}
+.creative-nav a:hover,.creative-nav a:focus-visible{opacity:1!important;text-decoration:underline!important;text-underline-offset:5px!important}
+.creative-nav .nav-home{font-weight:700!important;letter-spacing:.035em!important;margin-right:14px!important}
+.creative-nav .nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:clamp(12px,2vw,25px)!important;flex-wrap:wrap!important}
+@media(max-width:850px){.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:8px!important;margin-bottom:20px!important}.creative-nav .nav-links{justify-content:flex-start!important;gap:6px 18px!important}}
+@media(max-width:420px){.creative-nav{font-size:10px!important}.creative-nav .nav-links{gap:4px 13px!important}}
+
 </style></head><body><main class="page">
-<nav class="creative-nav" aria-label="Creative spaces"><a href="index.html">← Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
+<nav class="creative-nav" aria-label="Creative spaces">
+<a class="nav-home" href="index.html">Creative Side</a>
+<span class="nav-links">
+<a href="art-gallery.html">Art Gallery</a>
+<a href="travel-diaries.html">Travel Diaries</a>
+<a href="words-and-thoughts.html">Words &amp; Thoughts</a>
+<a href="music-room.html">Music Room</a>
+<a href="podcast-corner.html">Podcast Corner</a>
+<a href="kitchen-stories.html">Kitchen Stories</a>
+</span></nav>
+
 <section class="podcast-scene" aria-label="Illustrated podcast room with two people seated across a table, microphones, plants, a dog and a scenic view">
 <div class="scene-window"><div class="scene-hill hill-back"></div><div class="scene-hill hill-front"></div><div class="scene-sun"></div><div class="window-cross vertical"></div><div class="window-cross horizontal"></div></div>
 <div class="scene-plant plant-left"><i></i><i></i><i></i><i></i><b></b></div><div class="scene-plant plant-right"><i></i><i></i><i></i><i></i><b></b></div>
