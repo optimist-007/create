@@ -43,11 +43,31 @@ h1{font-size:clamp(4rem,10vw,8.6rem);line-height:.82;margin:16px 0 22px;max-widt
 footer{padding:24px 0 0;display:flex;justify-content:space-between;gap:14px;color:var(--muted);font:.68rem var(--mono);letter-spacing:.1em;text-transform:uppercase}footer a{text-decoration:none;color:var(--accent)}
 @media(max-width:820px){.hero{grid-template-columns:1fr .75fr;gap:20px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shelf{grid-template-columns:1fr}}
 @media(max-width:560px){.page{width:calc(100% - 30px);padding-top:15px}.hero{grid-template-columns:1fr;padding:46px 0 28px}.hero-art{min-height:230px}.hero-art-inner{min-height:195px}.intro-strip{font-size:.6rem}.section-heading{display:block}.section-heading p{margin-top:12px}.category-grid{gap:9px}.category{min-height:190px;padding:15px}.category h3{font-size:1.8rem}.shelf{padding:20px;margin-top:38px}.note{display:block}.note span{display:block;margin-top:15px}footer{flex-direction:column}}
+
+/* Shared navigation system: identical structure, spacing and link behaviour on every page */
+.creative-nav{position:relative!important;z-index:20!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;width:100%!important;box-sizing:border-box!important;margin:0 0 26px!important;padding:15px 0 16px!important;border:0!important;border-bottom:1px solid rgba(85,91,79,.28)!important;border-radius:0!important;background:transparent!important;font:500 11px/1.35 Arial,sans-serif!important;letter-spacing:.045em!important;text-transform:none!important}
+.creative-nav a{display:inline-flex!important;align-items:center!important;min-height:28px!important;padding:5px 0!important;color:inherit!important;text-decoration:none!important;white-space:nowrap!important;opacity:.86!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transition:opacity .18s ease,border-color .18s ease!important}
+.creative-nav a:hover,.creative-nav a:focus-visible{opacity:1!important;text-decoration:underline!important;text-underline-offset:5px!important}
+.creative-nav .nav-home{font-weight:700!important;letter-spacing:.035em!important;margin-right:14px!important}
+.creative-nav .nav-links{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:clamp(12px,2vw,25px)!important;flex-wrap:wrap!important}
+@media(max-width:850px){.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:8px!important;margin-bottom:20px!important}.creative-nav .nav-links{justify-content:flex-start!important;gap:6px 18px!important}}
+@media(max-width:420px){.creative-nav{font-size:10px!important}.creative-nav .nav-links{gap:4px 13px!important}}
+
 </style>
 </head>
 <body>
 <main class="page">
-<nav class="creative-nav" aria-label="Creative spaces"><a class="nav-home" href="index.html">Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
+<nav class="creative-nav" aria-label="Creative spaces">
+<a class="nav-home" href="index.html">Creative Side</a>
+<span class="nav-links">
+<a href="art-gallery.html">Art Gallery</a>
+<a href="travel-diaries.html">Travel Diaries</a>
+<a href="words-and-thoughts.html">Words &amp; Thoughts</a>
+<a href="music-room.html">Music Room</a>
+<a href="podcast-corner.html">Podcast Corner</a>
+<a href="kitchen-stories.html">Kitchen Stories</a>
+</span></nav>
+
 <header class="hero">
 <div><div class="eyebrow">A little from my kitchen</div><h1>Kitchen<br>Stories.</h1><p>Recipes I return to, cakes that teach me something, everyday meals, and the happy experiments that happen when I step into the kitchen.</p></div>
 <div class="hero-art" aria-label="Illustration of a plate of freshly baked food"><div class="hero-art-inner"><div class="plate"></div><span class="art-note">made at home ♡</span></div></div>
