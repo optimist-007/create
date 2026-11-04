@@ -43,11 +43,31 @@ h1{font-size:clamp(4rem,10vw,8.6rem);line-height:.82;margin:16px 0 22px;max-widt
 footer{padding:24px 0 0;display:flex;justify-content:space-between;gap:14px;color:var(--muted);font:.68rem var(--mono);letter-spacing:.1em;text-transform:uppercase}footer a{text-decoration:none;color:var(--accent)}
 @media(max-width:820px){.hero{grid-template-columns:1fr .75fr;gap:20px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shelf{grid-template-columns:1fr}}
 @media(max-width:560px){.page{width:calc(100% - 30px);padding-top:15px}.hero{grid-template-columns:1fr;padding:46px 0 28px}.hero-art{min-height:230px}.hero-art-inner{min-height:195px}.intro-strip{font-size:.6rem}.section-heading{display:block}.section-heading p{margin-top:12px}.category-grid{gap:9px}.category{min-height:190px;padding:15px}.category h3{font-size:1.8rem}.shelf{padding:20px;margin-top:38px}.note{display:block}.note span{display:block;margin-top:15px}footer{flex-direction:column}}
+/* One shared editorial masthead across every Creative Side page */
+.creative-nav{position:relative!important;z-index:50!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;width:100%!important;min-height:80px!important;margin:0 0 30px!important;padding:22px 0 20px!important;border:0!important;border-bottom:1px solid rgba(57,49,43,.28)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;font-family:"DM Mono","Courier New",monospace!important;font-size:clamp(10px,.94vw,14px)!important;line-height:1.4!important;letter-spacing:.055em!important;text-transform:uppercase!important}
+.creative-nav a{display:inline-block!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:inherit!important;text-decoration:none!important;white-space:nowrap!important;opacity:1!important;transition:opacity .18s ease,text-decoration-color .18s ease!important}
+.creative-nav a:hover,.creative-nav a:focus-visible{opacity:.62!important;text-decoration:underline!important;text-underline-offset:5px!important}
+.creative-nav .nav-brand{font-weight:700!important;letter-spacing:.035em!important}
+.creative-nav .nav-pages{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:clamp(14px,2.25vw,38px)!important;flex-wrap:wrap!important}
+@media(max-width:900px){.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:14px!important;padding:18px 0!important}.creative-nav .nav-pages{justify-content:flex-start!important;gap:10px 22px!important}}
+@media(max-width:520px){.creative-nav{min-height:0!important;margin-bottom:22px!important}.creative-nav .nav-pages{gap:9px 15px!important;font-size:10px!important}}
+
 </style>
 </head>
 <body>
+<nav class="creative-nav" aria-label="Creative Side navigation">
+<a class="nav-brand" href="index.html">CREATIVE SIDE</a>
+<div class="nav-pages">
+<a href="art-gallery.html">ART GALLERY</a>
+<a href="travel-diaries.html">TRAVEL DIARIES</a>
+<a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a>
+<a href="music-room.html">MUSIC ROOM</a>
+<a href="podcast-corner.html">PODCAST CORNER</a>
+<a href="kitchen-stories.html">KITCHEN STORIES</a>
+</div>
+</nav>
 <main class="page">
-<nav class="creative-nav" aria-label="Creative spaces"><a class="nav-home" href="index.html">Creative Side</a><span class="nav-links"><a href="art-gallery.html">Art</a><a href="travel-diaries.html">Travel</a><a href="words-and-thoughts.html">Words</a><a href="music-room.html">Music</a><a href="podcast-corner.html">Podcasts</a><a href="kitchen-stories.html">Kitchen</a></span></nav>
+
 <header class="hero">
 <div><div class="eyebrow">A little from my kitchen</div><h1>Kitchen<br>Stories.</h1><p>Recipes I return to, cakes that teach me something, everyday meals, and the happy experiments that happen when I step into the kitchen.</p></div>
 <div class="hero-art" aria-label="Illustration of a plate of freshly baked food"><div class="hero-art-inner"><div class="plate"></div><span class="art-note">made at home ♡</span></div></div>
