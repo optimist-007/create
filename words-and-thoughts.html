@@ -135,13 +135,39 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 @media(max-width:760px){.thought-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.open-book{grid-template-columns:1fr}.book-left{min-height:160px;gap:12px}.book-leaf{position:absolute;right:25px;top:25px;font-size:5rem}.book-left-caption{font-size:1.35rem}.book-spine{display:none}.book-right{min-height:280px}}
 @media(max-width:440px){.thought-grid{gap:8px}.thought-tile{min-height:130px;padding:13px}.thought-tile strong{font-size:1.3rem}.thought-tile small{font-size:.7rem}.index-note{font-size:.85rem}}
 
+
+/* Sketch-led Words & Thoughts layout: keep the six shelves and open-book interaction */
+.hero{max-width:none!important;margin:0!important;padding:clamp(28px,5vw,52px) 0 24px!important;display:grid;grid-template-columns:1fr auto;align-items:end;gap:18px}
+.hero h1{font-size:clamp(3.3rem,8vw,6.8rem)!important;line-height:.88!important;max-width:900px!important;letter-spacing:-.06em!important}
+.hero h1 span{display:inline-block;color:var(--wine)!important;font-size:1.04em;transform:rotate(9deg)}
+.hero:after{content:none!important}
+.hero p{max-width:580px!important}
+.word-flourish{margin-top:12px!important}
+.thought-index{padding:22px 0 12px!important}
+.thought-grid{gap:14px!important}
+.thought-tile{min-height:clamp(112px,13vw,164px)!important;padding:17px 20px!important;border-radius:2px 15px 3px 12px!important;box-shadow:0 5px 0 rgba(62,45,53,.035)!important}
+.thought-tile:nth-child(1),.thought-tile:nth-child(4){transform:rotate(-.6deg)}
+.thought-tile:nth-child(2),.thought-tile:nth-child(5){transform:rotate(.5deg)}
+.thought-tile:nth-child(3),.thought-tile:nth-child(6){transform:rotate(-.25deg)}
+.thought-tile:hover{transform:translateY(-5px) rotate(0)!important}
+.thought-tile.active{outline:2px solid rgba(134,86,107,.18);outline-offset:2px}
+.tile-icon{font-size:2.9rem!important;right:18px!important;top:8px!important}
+.turn-note{padding:15px 0 0!important;letter-spacing:.18em!important;color:var(--wine)!important}
+.open-book{margin-top:14px!important;min-height:330px!important;border-radius:4px 14px 4px 14px!important}
+.book-left,.book-right{min-height:330px!important}
+.book-left{background:radial-gradient(circle at 30% 30%,#f4e3df,#e8d1d2 68%,#dfc5c9)!important}
+.book-leaf{font-size:clamp(6rem,11vw,9rem)!important}
+.book-right{background:linear-gradient(90deg,#eee2dc,#fbf6f0 18%)!important}
+.book-text{line-height:1.78!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr!important}.thought-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.thought-tile{transform:none!important}}
+@media(max-width:440px){.hero h1{font-size:clamp(3rem,15vw,4.4rem)!important}}
 </style>
 </head>
 <body>
 <main class="page">
 <nav class="creative-nav" aria-label="Creative Side navigation"><a class="nav-brand" href="index.html">CREATIVE SIDE</a><div class="nav-pages"><a href="art-gallery.html">ART GALLERY</a><a href="travel-diaries.html">TRAVEL DIARIES</a><a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a><a href="music-room.html">MUSIC ROOM</a><a href="podcast-corner.html">PODCAST CORNER</a><a href="kitchen-stories.html">KITCHEN STORIES</a></div></nav>
 
-<header class="hero"><div class="kicker">05 / Notes from the margins</div><h1>Words <span>&amp;</span><br>Thoughts.</h1><p>A little corner for reflections, observations, personal essays and thoughts worth putting into words. Pick a page, then settle in and read.</p><div class="word-flourish" aria-hidden="true">♡ &nbsp; thoughts, gathered gently &nbsp; ♡</div></header>
+<header class="hero"><div class="kicker">A little room inside my head</div><h1>I love <span>♡</span><br>Wanna peep<br>in my head?</h1><p>Six little windows into the things I think about, notice, remember and write down. Pick one and have a look around.</p><div class="word-flourish" aria-hidden="true">♡ &nbsp; come in, have a read &nbsp; ♡</div></header>
 <section class="thought-index" aria-label="Writing shelves">
 <div class="thought-index-head"><span class="kicker">THE INDEX</span><span class="index-note">Choose a page to open</span></div>
 <div class="thought-grid">
@@ -152,11 +178,11 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 <button class="thought-tile" data-shelf="learning"><span class="tile-no">05</span><span class="tile-icon">✧</span><strong>Lessons &amp; change</strong><small>Learning, unlearning and growing</small></button>
 <button class="thought-tile" data-shelf="misc"><span class="tile-no">06</span><span class="tile-icon">…</span><strong>Everything else</strong><small>The thoughts that need their own page</small></button>
 </div>
-<div class="turn-note"><span>↓</span> Turn the page to read</div>
+<div class="turn-note"><span>↓</span> OPEN MY BRAIN <span>↓</span></div>
 </section>
 <section class="open-book" id="reading-room" aria-live="polite">
 <div class="book-spine" aria-hidden="true"></div>
-<div class="book-left"><span class="book-label">WORDS &amp; THOUGHTS · OPEN PAGE</span><div class="book-leaf">♡</div><p class="book-left-caption">A collection of things<br>worth keeping.</p><span class="book-page-no">01</span></div>
+<div class="book-left"><span class="book-label">WORDS &amp; THOUGHTS · OPEN PAGE</span><div class="book-leaf">♡</div><p class="book-left-caption">A little bit of<br>what goes on in here.</p><span class="book-page-no">01</span></div>
 <div class="book-right"><div class="book-meta" id="book-meta">REFLECTIONS · JOURNAL</div><h2 id="book-title">A page for reflection</h2><div class="book-text" id="entries"><div class="empty">Loading writing…</div></div><span class="book-page-no">02</span></div>
 </section>
 <footer><a href="index.html">Back to Creative Side</a></footer>
