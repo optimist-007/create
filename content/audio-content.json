@@ -1,4 +1,64 @@
 {
-  "music": [],
-  "podcasts": []
+  "music": [
+    {
+      "title": "Malayalam recording · Sample cassette",
+      "language": "Malayalam",
+      "year": "DEMO YEAR",
+      "youtube": "",
+      "description": "MOCK ENTRY ONLY. Replace with the actual recording link and year."
+    },
+    {
+      "title": "English recording · Sample cassette",
+      "language": "English",
+      "year": "DEMO YEAR",
+      "youtube": "",
+      "description": "MOCK ENTRY ONLY. Replace with the actual recording link and year."
+    }
+  ],
+  "podcasts": [
+    {
+      "title": "My first podcast · Motivation",
+      "category": "Motivation",
+      "topics": [
+        "Motivation",
+        "Personal growth"
+      ],
+      "youtube": "",
+      "description": "MOCK LISTING ONLY. This is the first podcast recording you identified. Add its hosted audio or video link to enable playback.",
+      "demo": true
+    },
+    {
+      "title": "Small steps, steady progress",
+      "category": "Motivation",
+      "topics": [
+        "Motivation",
+        "Personal growth"
+      ],
+      "youtube": "",
+      "description": "DEMO TOPIC PLACEHOLDER. Replace this title and description with a real episode when ready.",
+      "demo": true
+    },
+    {
+      "title": "Everyday life conversations",
+      "category": "Daily life",
+      "topics": [
+        "Daily life",
+        "Stories"
+      ],
+      "youtube": "",
+      "description": "DEMO TOPIC PLACEHOLDER. Replace this title and description with a real episode when ready.",
+      "demo": true
+    },
+    {
+      "title": "A completely random conversation",
+      "category": "Random",
+      "topics": [
+        "Random",
+        "Fun"
+      ],
+      "youtube": "",
+      "description": "DEMO TOPIC PLACEHOLDER. Replace this title and description with a real episode when ready.",
+      "demo": true
+    }
+  ]
 }
