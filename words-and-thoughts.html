@@ -191,12 +191,12 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 let journalEntries=[];
 const shelves={
- reflections:{label:"Reflections",description:"JOURNAL · REFLECTIONS",title:"A page for reflection",match:()=>true},
- people:{label:"People & connections",description:"PEOPLE · CONNECTIONS",title:"People & connections",match:()=>false},
- nature:{label:"Nature & places",description:"OBSERVATIONS · PLACES",title:"Nature & places",match:()=>false},
- creative:{label:"Creative notes",description:"IDEAS · FRAGMENTS",title:"Creative notes",match:()=>false},
- learning:{label:"Lessons & change",description:"LEARNING · GROWTH",title:"Lessons & change",match:()=>false},
- misc:{label:"Everything else",description:"LOOSE NOTES · OTHER THOUGHTS",title:"A little bit of everything",match:()=>false}
+ reflections:{label:"Reflections",description:"JOURNAL · REFLECTIONS",title:"A page for reflection",match:x=>!x.shelf||x.shelf==="reflections"},
+ people:{label:"People & connections",description:"PEOPLE · CONNECTIONS",title:"People & connections",match:x=>x.shelf==="people"},
+ nature:{label:"Nature & places",description:"OBSERVATIONS · PLACES",title:"Nature & places",match:x=>x.shelf==="nature"},
+ creative:{label:"Creative notes",description:"IDEAS · FRAGMENTS",title:"Creative notes",match:x=>x.shelf==="creative"},
+ learning:{label:"Lessons & change",description:"LEARNING · GROWTH",title:"Lessons & change",match:x=>x.shelf==="learning"},
+ misc:{label:"Everything else",description:"LOOSE NOTES · OTHER THOUGHTS",title:"A little bit of everything",match:x=>x.shelf==="misc"}
 };
 function showShelf(key){
  const shelf=shelves[key]||shelves.reflections;
