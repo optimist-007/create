@@ -6,13 +6,13 @@
     "aside": "This space starts with reviews. The rest can come when it comes."
   },
   "featured": {
-    "type": "Film or book",
-    "title": "",
-    "date": "",
-    "image": "",
-    "excerpt": "A reflective opening for the film or book you most want visitors to notice.",
-    "review": "",
-    "quote": "",
+    "type": "Movie",
+    "title": "The Wild Robot",
+    "date": "2024 · DEMO FEATURE",
+    "image": "assets/The Wild Robot_ A Cinematic Film Review.png",
+    "excerpt": "A warm story about care, belonging and the unexpected ways we learn to look after one another. This featured slot is a sample layout using an existing review from the archive.",
+    "review": "DEMO FEATURE TEXT: This is a sample featured-review introduction for testing the homepage layout. Replace it with your own featured review, excerpt and image selection whenever you are ready. The full review already exists in the archive below.",
+    "quote": "Sometimes the stories that stay with us are the ones that make us feel a little more human.",
     "link": ""
   },
   "posts": [
@@ -128,16 +128,19 @@
   ],
   "future": [
     {
-      "title": "Stories",
-      "text": "A place for fiction and Wattpad work whenever I feel like bringing it here."
+      "title": "Stories & fiction",
+      "text": "DEMO SHELF: A home for short stories, fiction drafts, Wattpad links and little worlds you might want to build. Replace this sample note when you add your writing.",
+      "demo": true
     },
     {
       "title": "Visual practice",
-      "text": "Painting and other visual work can come here later."
+      "text": "DEMO SHELF: Sketchbook pages, painting studies, colour experiments and works in progress can live here. Your original art remains in the Art Gallery.",
+      "demo": true
     },
     {
       "title": "Other forms",
-      "text": "Leaving this open for whatever I end up creating next."
+      "text": "DEMO SHELF: A flexible corner for anything that does not fit elsewhere: handmade projects, creative challenges, playlists or unexpected experiments.",
+      "demo": true
     }
   ],
   "theme": {
