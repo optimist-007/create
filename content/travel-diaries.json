@@ -42,6 +42,38 @@
           "text": "Lastly, Mumbai. I visited that beach after a long time. I usually used to visit Juhu Beach every time I went to Mumbai. Surprisingly, Versova is much cleaner than Juhu. I understand the situation at Juhu, but it is disturbing when you visit the beach in the early mornings or evenings.There are food stalls here as well. The road was under repair, and construction was underway on a road that would make travel easier and faster."
         }
       ]
+    },
+    {
+      "slug": "mountain-mock-vlog",
+      "title": "A little mountain escape",
+      "date": "Demo · Year to be added",
+      "locations": "Mountain trip · Mock vlog",
+      "cover": "assets/mountain-mock.webp",
+      "coverAlt": "View from a wooden boat across a turquoise mountain lake, used as a mock travel-vlog cover.",
+      "excerpt": "A test travel-vlog entry using a mountain-lake visual. This is sample content for layout testing and is not a published travel account.",
+      "body": [
+        {
+          "type": "paragraph",
+          "text": "DEMO ENTRY: This mountain-trip page is a mock vlog created to test the Travel Diaries layout. Replace this text with the real destination, dates, route and memories before publishing."
+        },
+        {
+          "type": "heading",
+          "text": "The view"
+        },
+        {
+          "type": "paragraph",
+          "text": "A wooden boat, clear turquoise water and mountains rising in the distance make this a placeholder for a future mountain story. The image is being used as a visual test while the final vlog is prepared."
+        },
+        {
+          "type": "heading",
+          "text": "Vlog notes"
+        },
+        {
+          "type": "paragraph",
+          "text": "DEMO ONLY: Add the actual video link, travel details, favourite moments, food stops and practical notes here. Nothing in this sample should be treated as a verified itinerary."
+        }
+      ],
+      "demo": true
     }
   ],
   "placesWorthReturningTo": [
@@ -53,7 +85,8 @@
   ],
   "littleTravelNotes": [
     "The Calicut beach is calmest between 3 and 4 p.m. After that, it gets packed with crowds.",
-    "The mangroves, backwaters and beach made the one-hour Poovar boat ride worth it."
+    "The mangroves, backwaters and beach made the one-hour Poovar boat ride worth it.",
+    "DEMO PLACEHOLDER: Add the mountain-trip details and vlog notes here."
   ],
   "travelWishlist": []
 }
