@@ -48,7 +48,7 @@
       "title": "A little mountain escape",
       "date": "Demo · Year to be added",
       "locations": "Mountain trip · Mock vlog",
-      "cover": "assets/mountain-mock.webp",
+      "cover": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1400&q=85",
       "coverAlt": "View from a wooden boat across a turquoise mountain lake, used as a mock travel-vlog cover.",
       "excerpt": "A test travel-vlog entry using a mountain-lake visual. This is sample content for layout testing and is not a published travel account.",
       "body": [
