@@ -86,7 +86,31 @@
   "littleTravelNotes": [
     "The Calicut beach is calmest between 3 and 4 p.m. After that, it gets packed with crowds.",
     "The mangroves, backwaters and beach made the one-hour Poovar boat ride worth it.",
-    "DEMO PLACEHOLDER: Add the mountain-trip details and vlog notes here."
+    "DEMO PLACEHOLDER: Add the mountain-trip details and vlog notes here.",
+    "DEMO NOTE: Keep a tiny list of sounds, colours, food and unexpected moments from each trip."
   ],
-  "travelWishlist": []
+  "travelWishlist": [
+    "Japan · DEMO",
+    "New Zealand · DEMO",
+    "The Swiss Alps · DEMO",
+    "Rajasthan road trip · DEMO",
+    "Andaman Islands · DEMO"
+  ],
+  "postcards": [
+    {
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=82",
+      "alt": "Sunlit tropical beach and turquoise sea",
+      "caption": "DEMO POSTCARD · A beach day to remember"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=82",
+      "alt": "Mountain landscape under a wide sky",
+      "caption": "DEMO POSTCARD · Somewhere in the hills"
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=82",
+      "alt": "Mountain lake surrounded by forest",
+      "caption": "DEMO POSTCARD · A quiet view"
+    }
+  ]
 }
