@@ -27,7 +27,7 @@ h1{max-width:900px;margin:14px auto 0;font:500 clamp(2.7rem,6vw,5rem)/.92 var(--
 <body><main class="page"><div class="topline"><a href="travel-diaries.html">← All travel diaries</a><a href="index.html">Creative Side</a></div><div id="articleRoot"><div class="error">Loading travel story…</div></div></main>
 <script>
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function imgPath(s){s=String(s||"").trim();return /^assets\/[A-Za-z0-9._/-]+$/.test(s)?s:"";}
+function imgPath(s){s=String(s||"").trim();return /^assets\/[A-Za-z0-9._% -]+$/.test(s)?s:"";}
 function blockHtml(b){
  if(!b||typeof b!=="object")return "";
  if(b.type==="heading")return "<h2>"+esc(b.text)+"</h2>";
