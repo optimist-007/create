@@ -48,6 +48,29 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 @media(max-width:900px){main.wrap,main.page{width:calc(100% - 40px)!important;padding-top:10px!important}.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:10px!important;margin-bottom:18px!important}.creative-nav .nav-pages{justify-content:flex-start!important;flex-wrap:wrap!important;gap:8px 18px!important}}
 @media(max-width:520px){main.wrap,main.page{width:calc(100% - 32px)!important;padding-top:8px!important}.creative-nav{font-size:10px!important}.creative-nav .nav-pages{gap:7px 13px!important}}
 
+
+/* CREATIVE SIDE: shared visual rhythm, motion and compact spacing */
+:root{scroll-behavior:smooth}
+body{position:relative;isolation:isolate}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 8% 12%,rgba(194,166,128,.12),transparent 34%),radial-gradient(ellipse at 92% 78%,rgba(119,145,125,.11),transparent 32%);animation:ambientDrift 18s ease-in-out infinite alternate}
+@keyframes ambientDrift{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(1%,1%,0) scale(1.035)}}
+@keyframes softRise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+:where(.page,.wrap){padding-bottom:clamp(28px,4vw,48px)!important}
+:where(.section,.episodes,.shelf,.archive,.thought-index,.journal-bottom,.lately-section,.art-gallery-section,.travel-diaries-section,.extra-section){margin-top:clamp(20px,3vw,34px)!important}
+:where(.section-head,.episodes-head,.library-head,.archive-top,.thought-index-head){margin-bottom:clamp(10px,1.5vw,16px)!important}
+:where(.category-grid,.recipe-grid,.episode-grid,.thought-grid,.postcard-grid,.place-grid,.wishlist-grid,.experiment-grid,.project-grid,.art-gallery-grid,.quote-grid,.lately-grid,.journal-shelf,.archive-strip){gap:clamp(10px,1.35vw,16px)!important}
+:where(.category,.recipe-card,.post-card,.thought-tile,.archive-card,.media-entry,.journal-card,.lately-card,.quote-card,.artwork-card,.place-card,.note-card,.wishlist-item,.cassette,.episode,.experiment-tile,.playlist-item){transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;animation:softRise .55s both}
+:where(.category,.recipe-card,.post-card,.thought-tile,.archive-card,.media-entry,.journal-card,.lately-card,.quote-card,.artwork-card,.place-card,.note-card,.wishlist-item,.cassette,.episode,.experiment-tile,.playlist-item):hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(49,57,45,.10)}
+:where(.category,.recipe-card,.post-card,.thought-tile,.archive-card,.media-entry,.journal-card,.lately-card,.quote-card,.artwork-card,.place-card,.note-card,.wishlist-item,.cassette,.episode,.experiment-tile,.playlist-item):focus-within{outline:1px solid rgba(113,129,107,.45);outline-offset:2px}
+:where(a,button){-webkit-tap-highlight-color:transparent}
+:where(a,button):focus-visible{outline:2px solid #71816b!important;outline-offset:3px!important}
+:where(.creative-nav a,.nav-links a,.nav-pages a){transition:color .2s ease,opacity .2s ease,text-decoration-color .2s ease}
+:where(img,.poster,.post-image,.story-image,.frame,.cover,.recipe-art,.journal-thumb){transition:transform .45s ease,filter .45s ease}
+:where(.artwork-card,.post-card,.recipe-card,.journal-card):hover :where(img,.poster,.post-image,.story-image,.frame,.cover,.recipe-art,.journal-thumb){filter:saturate(1.06)}
+:where(.hero,.mast,.podcast-scene,.lounge,.room){animation:softRise .7s ease both}
+:where(.eyebrow,.tiny-label,.small-label,.section-kicker){letter-spacing:.14em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head><body>
 <main class="page">
 <nav class="creative-nav" aria-label="Creative Side navigation"><a class="nav-brand" href="index.html">CREATIVE SIDE</a><div class="nav-pages"><a href="art-gallery.html">ART GALLERY</a><a href="travel-diaries.html">TRAVEL DIARIES</a><a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a><a href="music-room.html">MUSIC ROOM</a><a href="podcast-corner.html">PODCAST CORNER</a><a href="kitchen-stories.html">KITCHEN STORIES</a></div></nav>
