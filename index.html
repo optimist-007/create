@@ -893,68 +893,6 @@ main.wrap,main.page{box-sizing:border-box!important;width:min(1200px,calc(100% -
 @media(max-width:900px){main.wrap,main.page{width:calc(100% - 40px)!important;padding-top:10px!important}.creative-nav{align-items:flex-start!important;flex-direction:column!important;gap:10px!important;margin-bottom:18px!important}.creative-nav .nav-pages{justify-content:flex-start!important;flex-wrap:wrap!important;gap:8px 18px!important}}
 @media(max-width:520px){main.wrap,main.page{width:calc(100% - 32px)!important;padding-top:8px!important}.creative-nav{font-size:10px!important}.creative-nav .nav-pages{gap:7px 13px!important}}
 
-
-/* CREATIVE SIDE: shared visual rhythm, motion and compact spacing */
-:root{scroll-behavior:smooth}
-body{position:relative;isolation:isolate}
-body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 8% 12%,rgba(194,166,128,.12),transparent 34%),radial-gradient(ellipse at 92% 78%,rgba(119,145,125,.11),transparent 32%);animation:ambientDrift 18s ease-in-out infinite alternate}
-@keyframes ambientDrift{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(1%,1%,0) scale(1.035)}}
-@keyframes softRise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
-@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-:where(.page,.wrap){padding-bottom:clamp(28px,4vw,48px)!important}
-:where(.section,.episodes,.shelf,.archive,.thought-index,.journal-bottom,.lately-section,.art-gallery-section,.travel-diaries-section,.extra-section){margin-top:clamp(20px,3vw,34px)!important}
-:where(.section-head,.episodes-head,.library-head,.archive-top,.thought-index-head){margin-bottom:clamp(10px,1.5vw,16px)!important}
-:where(.category-grid,.recipe-grid,.episode-grid,.thought-grid,.postcard-grid,.place-grid,.wishlist-grid,.experiment-grid,.project-grid,.art-gallery-grid,.quote-grid,.lately-grid,.journal-shelf,.archive-strip){gap:clamp(10px,1.35vw,16px)!important}
-:where(.category,.recipe-card,.post-card,.thought-tile,.archive-card,.media-entry,.journal-card,.lately-card,.quote-card,.artwork-card,.place-card,.note-card,.wishlist-item,.cassette,.episode,.experiment-tile,.playlist-item){transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;animation:softRise .55s both}
-:where(.category,.recipe-card,.post-card,.thought-tile,.archive-card,.media-entry,.journal-card,.lately-card,.quote-card,.artwork-card,.place-card,.note-card,.wishlist-item,.cassette,.episode,.experiment-tile,.playlist-item):hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(49,57,45,.10)}
-:where(.category,.recipe-card,.post-card,.thought-tile,.archive-card,.media-entry,.journal-card,.lately-card,.quote-card,.artwork-card,.place-card,.note-card,.wishlist-item,.cassette,.episode,.experiment-tile,.playlist-item):focus-within{outline:1px solid rgba(113,129,107,.45);outline-offset:2px}
-:where(a,button){-webkit-tap-highlight-color:transparent}
-:where(a,button):focus-visible{outline:2px solid #71816b!important;outline-offset:3px!important}
-:where(.creative-nav a,.nav-links a,.nav-pages a){transition:color .2s ease,opacity .2s ease,text-decoration-color .2s ease}
-:where(img,.poster,.post-image,.story-image,.frame,.cover,.recipe-art,.journal-thumb){transition:transform .45s ease,filter .45s ease}
-:where(.artwork-card,.post-card,.recipe-card,.journal-card):hover :where(img,.poster,.post-image,.story-image,.frame,.cover,.recipe-art,.journal-thumb){filter:saturate(1.06)}
-:where(.hero,.mast,.podcast-scene,.lounge,.room){animation:softRise .7s ease both}
-:where(.eyebrow,.tiny-label,.small-label,.section-kicker){letter-spacing:.14em}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-
-/* MAIN PAGE: tighten the vertical rhythm without changing content */
-.wrap{padding-top:12px!important;padding-bottom:34px!important}
-.topline{padding-bottom:7px!important}
-.masthead{padding:16px 0 8px!important}
-.mast-grid{gap:22px!important}
-.note{padding:17px 18px!important}
-.note p{font-size:1.32rem!important}
-.hero-rule{margin-top:5px!important}
-.ticker-wrap{margin-top:7px!important;margin-bottom:16px!important}
-.ticker{padding:8px 0!important}
-.section{margin-top:30px!important}
-.section-head{padding-bottom:8px!important;margin-bottom:14px!important}
-.filters{margin:4px 0 16px!important}
-.review-stage{min-height:0!important;padding:24px 0!important;gap:clamp(18px,3vw,42px)!important}
-.poster-wrap{min-height:330px!important}
-.poster{height:clamp(300px,43vw,490px)!important}
-.poster-fallback{padding:24px!important}
-.empty-review{padding:26px 0!important}
-.quote-card{min-height:175px!important}
-.quote-card .meta{margin-top:15px!important}
-.obsession-board{margin-top:22px!important}
-.creative-custom-section{margin-top:34px!important;padding:26px 0!important}
-.journal-bottom{margin-top:34px!important}
-.journal-bottom-head{padding:24px 0 14px!important}
-.journal-shelf{margin-top:18px!important}
-.lately-section{padding:24px 0 24px!important}
-.lately-heading{margin-bottom:14px!important;padding-bottom:8px!important}
-.lately-card{min-height:145px!important;padding:17px 19px!important}
-@media(max-width:760px){
- .wrap{padding:12px 5vw 28px!important}
- .masthead{padding:12px 0 6px!important}
- .section{margin-top:24px!important}
- .review-stage{padding:18px 0!important;gap:18px!important}
- .poster-wrap{min-height:0!important}
- .poster{height:clamp(260px,70vw,400px)!important;min-height:0!important}
- .journal-bottom{margin-top:26px!important}
- .creative-custom-section{margin-top:26px!important;padding:20px 0!important}
-}
 </style>
 </head>
 <body>
@@ -1028,55 +966,40 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
     </div>
   </section>
 
-  <section class="section" id="obsessions">
-    <div class="section-head reveal">
-      <div>
-        <div class="eyebrow">Current page</div>
-        <h2>Currently obsessed with.</h2>
-      </div>
-      <p class="section-kicker">This can hold a film, a book, a writer, a song, a sentence, or whatever has taken up too much room in your head lately.</p>
-    </div>
-    <div class="obsession-board">
-      <div class="obsession-label reveal">
-        <div class="tiny-label">right now</div>
-        <h2>What is<br>occupying<br>the brain.</h2>
-      </div>
-      <div class="obsession-items" id="obsessionItems">
-        <div class="obsession-item playlist-item reveal visible">
-          <div class="obsession-playlist-head">
-            <div>
-              <div class="tiny-label">01 · music obsession</div>
-              <strong>Bethlehem Kudumba Unit songs</strong>
-              <div class="obsession-playlist-note">I am actually obsessed with these songs right now. This whole soundtrack has been on repeat for me.</div>
-            </div>
-            <span class="meta">on repeat</span>
-          </div>
-<div class="obsession-tracks">
-            <span class="obsession-track">Maanthrikam</span>
-            <span class="obsession-track">Illey Illa</span>
-            <span class="obsession-track">Varnajaalam</span>
-            <span class="obsession-track">Muttayi Vandi</span>
-            <span class="obsession-track">Kanmaniye</span>
-            <span class="obsession-track">Pidithara</span>
-            <span class="obsession-track">Cha Cha Chi Chi Choo</span>
-            <span class="obsession-track">Rakthasahodaran</span>
-            <span class="obsession-track">Kochu Thanuppu</span>
-            <span class="obsession-track">Indrajaalam</span>
-          </div>
-          <a class="obsession-play-link" href="https://www.youtube.com/watch?v=yd4lzwxSVtg" target="_blank" rel="noopener noreferrer">Open official jukebox on YouTube ↗</a>
-        </div>
-      </div>
+  
+
+
+
+
+
+
+
+
+  <section class="section lately-section" id="a-few-things-lately">
+    <h2 class="lately-heading">A few things, lately.</h2>
+    <div class="lately-grid">
+      <article class="lately-card">
+        <div class="lately-kicker">01 · The current chapter</div>
+        <h3>Currently reading</h3>
+        <p class="lately-subtitle">The Golden Notebook</p>
+        <div class="lately-meta">Doris Lessing · Goodreads 3.77/5 · 25,528 ratings</div>
+        <a href="https://www.goodreads.com/search?q=The+Golden+Notebook+Doris+Lessing" target="_blank" rel="noopener noreferrer">Goodreads page ↗</a>
+        <svg class="lately-art" viewBox="0 0 150 150" aria-hidden="true"><path d="M12 116 C38 28 57 44 80 96 S118 124 139 27"/><path class="gold" d="M8 126 C39 55 55 56 78 111 S116 125 145 44"/><path d="M18 90 C44 22 73 16 112 49"/><circle class="dot" cx="130" cy="28" r="5"/><circle cx="25" cy="127" r="3"/></svg>
+      </article>
+      <article class="lately-card">
+        <div class="lately-kicker">02 · The current chapter</div>
+        <h3>Small things I've noticed</h3>
+        <p>I am finally happy being a jack of all trades and master of none.</p>
+        <svg class="lately-art" viewBox="0 0 150 150" aria-hidden="true"><circle cx="82" cy="76" r="58"/><circle class="gold" cx="82" cy="76" r="47"/><path d="M10 86 C43 50 64 112 91 78 S124 54 143 28"/><path class="gold" d="M8 99 C43 68 66 117 97 88 S126 68 143 50"/><circle class="dot" cx="135" cy="25" r="5"/></svg>
+      </article>
+      <article class="lately-card">
+        <div class="lately-kicker">03 · The current chapter</div>
+        <h3>Currently indulged in</h3>
+        <p>Making my own Pinterest-y clothes.</p>
+        <svg class="lately-art" viewBox="0 0 150 150" aria-hidden="true"><ellipse cx="83" cy="78" rx="59" ry="37" transform="rotate(-28 83 78)"/><ellipse class="gold" cx="83" cy="78" rx="42" ry="61" transform="rotate(28 83 78)"/><path d="M18 103 C49 51 80 113 111 61 S133 42 144 30"/><path class="gold" d="M13 116 C47 66 76 121 113 78 S135 61 147 50"/><path d="M32 20 L39 35 L54 42 L39 49 L32 64 L25 49 L10 42 L25 35 Z"/><circle class="dot" cx="128" cy="130" r="5"/></svg>
+      </article>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
   
 
 </main>
