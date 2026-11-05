@@ -124,15 +124,21 @@ function render(list,title){
  }).join("")+'</div>':'<div class="empty">No episodes match this selection yet. Choose another topic or browse all episodes.</div>';
 }
 function openPicker(category){activeCategory=category;$("modalTitle").textContent=category;$("modalPrompt").textContent=category==="Random"?"Pick the kind of unexpected conversation you feel like hearing.":"Choose one or more topics. You can change this selection any time.";const opts=topics[category];$("topicList").innerHTML=opts.map(t=>'<label class="topic"><input type="checkbox" value="'+esc(t)+'"><span>'+esc(t)+'</span></label>').join("");$("topicDialog").showModal()}
+let episodesLoaded=false,pendingCategory="";
 function selectCategory(category){
- activeCategory=category;activeTopics=[];
- const list=episodes.filter(x=>String(x.category||"").trim().toLowerCase()===category.toLowerCase());
- render(list,category+" episodes");
+ activeCategory=category;
+ pendingCategory=category;
  document.querySelectorAll(".choice").forEach(b=>{const selected=b.dataset.category===category;b.setAttribute("aria-pressed",String(selected));b.classList.toggle("selected",selected)});
- $("episodeGrid").scrollIntoView({behavior:"smooth",block:"start"});
+ $("episodeTitle").textContent=category+" episodes";
+ $("episodeCount").textContent=episodesLoaded?"LOADING":"PLEASE WAIT";
+ if(!episodesLoaded){$("episodeGrid").innerHTML='<div class="empty">Loading your episodes…</div>';document.querySelector(".episodes").scrollIntoView({behavior:"smooth",block:"start"});return}
+ const list=episodes.filter(x=>String(x.category||"").trim().toLocaleLowerCase()===category.trim().toLocaleLowerCase());
+ render(list.length?list:episodes.filter(x=>String(x.category||"").trim()),category+" episodes");
+ $("episodeCount").textContent=list.length+" EPISODES";
+ document.querySelector(".episodes").scrollIntoView({behavior:"smooth",block:"start"});
 }
 document.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>selectCategory(b.dataset.category)));
 document.querySelector(".close").addEventListener("click",()=>$("topicDialog").close());document.querySelector(".cancel").addEventListener("click",()=>$("topicDialog").close());
 $("applyTopics").addEventListener("click",()=>{activeTopics=[...$("topicList").querySelectorAll("input:checked")].map(x=>x.value);const cat=activeCategory;const list=episodes.filter(x=>{const c=String(x.category||"").toLowerCase();const tags=Array.isArray(x.topics)?x.topics.map(v=>String(v).toLowerCase()):[];const categoryMatch=c===cat.toLowerCase()||(cat==="Random"&&c==="random");const topicMatch=!activeTopics.length||activeTopics.some(t=>tags.includes(t.toLowerCase())||String(x.description||"").toLowerCase().includes(t.toLowerCase()));return categoryMatch&&topicMatch});$("topicDialog").close();render(list,activeTopics.length?activeTopics.join(" · "):cat+" episodes")});
-fetch("content/audio-content.json").then(r=>r.json()).then(d=>{episodes=Array.isArray(d.podcasts)?d.podcasts:[];render(episodes,"The listening shelf")}).catch(()=>{$("episodeGrid").innerHTML='<div class="empty">Could not load the podcast collection.</div>'});
+fetch("./content/audio-content.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(d=>{episodes=Array.isArray(d.podcasts)?d.podcasts:[];episodesLoaded=true;render(episodes,"The listening shelf");if(pendingCategory)selectCategory(pendingCategory)}).catch(()=>{$("episodeGrid").innerHTML='<div class="empty">Could not load the podcast collection. Please refresh and try again.</div>';$("episodeCount").textContent="LOAD ERROR"});
 </script></body></html>
