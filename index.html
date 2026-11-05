@@ -916,6 +916,45 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;bac
 :where(.hero,.mast,.podcast-scene,.lounge,.room){animation:softRise .7s ease both}
 :where(.eyebrow,.tiny-label,.small-label,.section-kicker){letter-spacing:.14em}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* MAIN PAGE: tighten the vertical rhythm without changing content */
+.wrap{padding-top:12px!important;padding-bottom:34px!important}
+.topline{padding-bottom:7px!important}
+.masthead{padding:16px 0 8px!important}
+.mast-grid{gap:22px!important}
+.note{padding:17px 18px!important}
+.note p{font-size:1.32rem!important}
+.hero-rule{margin-top:5px!important}
+.ticker-wrap{margin-top:7px!important;margin-bottom:16px!important}
+.ticker{padding:8px 0!important}
+.section{margin-top:30px!important}
+.section-head{padding-bottom:8px!important;margin-bottom:14px!important}
+.filters{margin:4px 0 16px!important}
+.review-stage{min-height:0!important;padding:24px 0!important;gap:clamp(18px,3vw,42px)!important}
+.poster-wrap{min-height:330px!important}
+.poster{height:clamp(300px,43vw,490px)!important}
+.poster-fallback{padding:24px!important}
+.empty-review{padding:26px 0!important}
+.quote-card{min-height:175px!important}
+.quote-card .meta{margin-top:15px!important}
+.obsession-board{margin-top:22px!important}
+.creative-custom-section{margin-top:34px!important;padding:26px 0!important}
+.journal-bottom{margin-top:34px!important}
+.journal-bottom-head{padding:24px 0 14px!important}
+.journal-shelf{margin-top:18px!important}
+.lately-section{padding:24px 0 24px!important}
+.lately-heading{margin-bottom:14px!important;padding-bottom:8px!important}
+.lately-card{min-height:145px!important;padding:17px 19px!important}
+@media(max-width:760px){
+ .wrap{padding:12px 5vw 28px!important}
+ .masthead{padding:12px 0 6px!important}
+ .section{margin-top:24px!important}
+ .review-stage{padding:18px 0!important;gap:18px!important}
+ .poster-wrap{min-height:0!important}
+ .poster{height:clamp(260px,70vw,400px)!important;min-height:0!important}
+ .journal-bottom{margin-top:26px!important}
+ .creative-custom-section{margin-top:26px!important;padding:20px 0!important}
+}
 </style>
 </head>
 <body>
