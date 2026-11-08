@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Original fiction, ongoing stories and chapters from Creative Side.">
+<meta name="theme-color" content="#eee8dc">
+<title>Stories · Creative Side</title>
+<style>
+:root{--paper:#eee8dc;--paper2:#f5f0e7;--ink:#342b2b;--muted:#6c6060;--wine:#6a3044;--gold:#9b783d;--line:rgba(52,43,43,.16);--serif:"Cormorant Garamond",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--mono:"DM Mono",monospace}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 10%,rgba(155,120,61,.08),transparent 25%),var(--paper);color:var(--ink);font:16px/1.65 var(--sans)}
+a{color:inherit}.wrap{max-width:1240px;margin:auto;padding:20px 5vw 80px}
+.creative-nav{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:12px 0 16px;border-bottom:1px solid var(--line)}
+.nav-brand,.nav-pages{font:600 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.nav-brand{color:var(--wine);white-space:nowrap}.nav-pages{display:flex;gap:15px;flex-wrap:wrap;justify-content:flex-end}.nav-pages a{text-decoration:none;color:var(--muted)}.nav-pages a:hover,.nav-pages a[aria-current=page]{color:var(--wine)}
+.eyebrow,.meta,.tag{font:600 .68rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--wine)}
+header{padding:62px 0 34px;display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:end}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.045em}h1{font-size:clamp(4.5rem,10vw,9rem);line-height:.78;margin:14px 0 22px}header p{max-width:400px;color:var(--muted);margin:0}
+.shelf-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:13px;margin:22px 0}
+.shelf-head h2{font-size:clamp(2.5rem,5vw,4.5rem);line-height:.9;margin:0}
+.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.story-card{background:var(--paper2);border:1px solid var(--line);padding:13px;box-shadow:0 14px 34px rgba(52,43,43,.07);display:flex;flex-direction:column;min-width:0}
+.cover{aspect-ratio:3/4;background:linear-gradient(145deg,#d9cbb8,#b7a6a0 58%,#6a3044);display:grid;place-items:center;overflow:hidden;position:relative}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}.cover-placeholder{font:italic clamp(2rem,4vw,3.8rem)/.9 var(--serif);text-align:center;color:#fffaf1;padding:22px;text-shadow:0 2px 16px #342b2b66}
+.story-info{padding:17px 7px 8px;display:flex;flex-direction:column;flex:1}.story-info h3{font-size:2.1rem;line-height:.95;margin:8px 0}.story-info p{color:var(--muted);font-size:.9rem;margin:0 0 16px}
+.story-meta{display:flex;gap:9px;flex-wrap:wrap;color:var(--muted);font: .62rem var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.read-button,.back-button{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;margin-top:auto;padding:10px 0 5px;border:0;border-bottom:1px solid var(--ink);background:none;text-decoration:none;color:var(--ink);font:600 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.empty{padding:55px 28px;background:var(--paper2);border:1px dashed rgba(52,43,43,.25);text-align:center}.empty h3{font-size:2.6rem;margin:0 0 8px}.empty p{max-width:600px;margin:0 auto;color:var(--muted)}
+#reader{display:none;margin-top:36px}.reader-top{display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid var(--line);padding:16px 0}
+.reader-layout{display:grid;grid-template-columns:260px minmax(0,760px);gap:clamp(28px,6vw,80px);justify-content:center;padding:35px 0}
+.chapter-list{position:sticky;top:20px;align-self:start;background:var(--paper2);border:1px solid var(--line);padding:20px}
+.chapter-list h3{font-size:1.8rem;margin:0 0 12px}.chapter-list button{display:block;width:100%;padding:9px 0;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;color:var(--muted);cursor:pointer;font: .78rem var(--sans)}.chapter-list button.active{color:var(--wine);font-weight:700}
+.chapter-content{min-width:0}.chapter-heading{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:26px}.chapter-heading h2{font-size:clamp(2.7rem,6vw,5rem);line-height:.9;margin:10px 0}.chapter-body{font:1.13rem/1.95 var(--serif);color:#443a3a;white-space:normal}.chapter-body p{margin:0 0 1.3em}.chapter-body h2,.chapter-body h3{line-height:1.05;margin:1.5em 0 .6em}.chapter-body blockquote{border-left:2px solid var(--gold);margin:1.5em 0;padding-left:20px;color:var(--wine);font-style:italic}.chapter-body img{max-width:100%;height:auto}
+.reader-controls{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);padding:20px 0;margin-top:30px}.reader-controls button{background:var(--ink);color:var(--paper);border:0;padding:12px 16px;font: .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}.reader-controls button:disabled{opacity:.35;cursor:not-allowed}
+.progress-track{height:3px;background:rgba(52,43,43,.12);margin-top:12px}.progress-fill{height:100%;width:0;background:var(--wine);transition:width .25s}
+footer{border-top:1px solid var(--line);padding-top:20px;margin-top:70px;color:var(--muted);font: .65rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:850px){.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.reader-layout{grid-template-columns:1fr}.chapter-list{position:static}.chapter-list button{display:inline-block;width:auto;margin-right:14px;border:0}}
+@media(max-width:620px){.creative-nav{align-items:flex-start;flex-direction:column}.nav-pages{justify-content:flex-start;gap:10px}.nav-pages a{font-size:.61rem}header{grid-template-columns:1fr;padding:42px 0 26px}.story-grid{grid-template-columns:1fr}.story-card{display:grid;grid-template-columns:112px 1fr;gap:10px}.cover{aspect-ratio:3/4}.story-info{padding:6px 2px}.story-info h3{font-size:1.7rem}.reader-top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body><main class="wrap">
+<nav class="creative-nav" aria-label="Creative Side navigation"><a class="nav-brand" href="index.html">CREATIVE SIDE</a><div class="nav-pages"><a href="art-gallery.html">ART GALLERY</a><a href="travel-diaries.html">TRAVEL DIARIES</a><a href="words-and-thoughts.html">WORDS &amp; THOUGHTS</a><a href="music-room.html">MUSIC ROOM</a><a href="podcast-corner.html">PODCAST CORNER</a><a href="kitchen-stories.html">KITCHEN STORIES</a><a href="stories.html" aria-current="page">STORIES</a></div></nav>
+<header><div><div class="eyebrow">A shelf for fiction · serials · unfinished worlds</div><h1>Stories.</h1></div><p>Original worlds, one chapter at a time. Settle in, choose a story, and pick up where you left off.</p></header>
+<section id="library"><div class="shelf-head"><div><div class="eyebrow">The reading room</div><h2>Find your next story.</h2></div><div class="meta" id="story-count">Loading library…</div></div><div id="story-grid" class="story-grid" aria-live="polite"></div></section>
+<section id="reader" aria-live="polite"><div class="reader-top"><button class="back-button" id="back-to-library">← All stories</button><div class="meta" id="reader-story-meta"></div></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div><div class="reader-layout"><aside class="chapter-list"><div class="eyebrow">In this story</div><h3 id="chapter-story-title"></h3><div id="chapter-buttons"></div></aside><article class="chapter-content"><div class="chapter-heading"><div class="eyebrow" id="chapter-number"></div><h2 id="chapter-title">Choose a chapter</h2><div class="meta" id="chapter-details"></div></div><div class="chapter-body" id="chapter-body"></div><div class="reader-controls"><button id="previous-chapter">← Previous</button><button id="next-chapter">Next chapter →</button></div></article></div></section>
+<footer>Creative Side · Stories are published from the GitHub repository</footer>
+</main>
+<script>
+const $=s=>document.querySelector(s);let library=[];let activeStory=null;let activeChapter=0;
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function markdown(source){
+ const safe=esc(source).replace(/\r/g,"");
+ return safe.split(/\n\n+/).map(block=>{
+  const b=block.trim();if(!b)return "";
+  if(/^### /.test(b))return "<h3>"+b.slice(4)+"</h3>";
+  if(/^## /.test(b))return "<h2>"+b.slice(3)+"</h2>";
+  if(/^> /.test(b))return "<blockquote>"+b.slice(2).replace(/\n/g,"<br>")+"</blockquote>";
+  if(/^[-*] /.test(b))return "<ul>"+b.split("\n").map(x=>"<li>"+x.replace(/^[-*] /,"")+"</li>").join("")+"</ul>";
+  return "<p>"+b.replace(/\n/g,"<br>")+"</p>";
+ }).join("");
+}
+function renderLibrary(){
+ $("#story-count").textContent=library.length+" "+(library.length===1?"story":"stories");
+ if(!library.length){$("#story-grid").innerHTML='<div class="empty" style="grid-column:1/-1"><div class="eyebrow">The first page is waiting</div><h3>Your story shelf is empty.</h3><p>When you add a story and its chapters in GitHub, they will appear here automatically. The website has no public writing or editing tools.</p></div>';return;}
+ $("#story-grid").innerHTML=library.map((s,i)=>'<article class="story-card"><div class="cover">'+(s.cover?'<img src="'+esc(s.cover)+'" alt="Cover for '+esc(s.title)+'">':'<div class="cover-placeholder">'+esc(s.title)+'</div>')+'</div><div class="story-info"><div class="tag">'+esc(s.genre||"Fiction")+' · '+esc(s.status||"Ongoing")+'</div><h3>'+esc(s.title)+'</h3><p>'+esc(s.description||"")+'</p><div class="story-meta"><span>'+esc(s.author||"")+'</span><span>'+((s.chapters||[]).length)+' chapters</span></div><button class="read-button" data-story="'+i+'">Read story ↗</button></div></article>').join("");
+ document.querySelectorAll("[data-story]").forEach(b=>b.addEventListener("click",()=>openStory(library[Number(b.dataset.story)])));
+}
+async function openStory(story){
+ if(!story.chapters||!story.chapters.length)return;
+ activeStory=story;activeChapter=0;$("#library").style.display="none";$("#reader").style.display="block";
+ $("#reader-story-meta").textContent=story.genre+" · "+story.status;$("#chapter-story-title").textContent=story.title;
+ $("#chapter-buttons").innerHTML=story.chapters.map((c,i)=>'<button data-chapter="'+i+'">'+String(i+1).padStart(2,"0")+' · '+esc(c.title)+'</button>').join("");
+ document.querySelectorAll("[data-chapter]").forEach(b=>b.addEventListener("click",()=>showChapter(Number(b.dataset.chapter))));
+ const saved=Number(localStorage.getItem("creative-story-"+story.slug)||0);showChapter(Math.min(saved,story.chapters.length-1));
+ history.replaceState(null,"","?story="+encodeURIComponent(story.slug)+"&chapter="+activeChapter);
+}
+async function showChapter(index){
+ if(!activeStory||index<0||index>=activeStory.chapters.length)return;activeChapter=index;
+ const chapter=activeStory.chapters[index];$("#chapter-number").textContent="Chapter "+String(index+1).padStart(2,"0");$("#chapter-title").textContent=chapter.title;$("#chapter-details").textContent=(chapter.wordCount?chapter.wordCount+" words · ":"")+ (chapter.date||"");
+ $("#chapter-body").innerHTML='<p class="meta">Loading chapter…</p>';
+ try{const r=await fetch(chapter.file,{cache:"no-store"});if(!r.ok)throw new Error("Chapter file not found");$("#chapter-body").innerHTML=markdown(await r.text());}
+ catch(e){$("#chapter-body").innerHTML='<p>This chapter is not published yet. Add the Markdown chapter file in GitHub and check its path in <code>content/stories.json</code>.</p>';}
+ document.querySelectorAll("[data-chapter]").forEach((b,i)=>b.classList.toggle("active",i===index));
+ $("#previous-chapter").disabled=index===0;$("#next-chapter").disabled=index===activeStory.chapters.length-1;
+ $("#progress-fill").style.width=((index+1)/activeStory.chapters.length*100)+"%";
+ localStorage.setItem("creative-story-"+activeStory.slug,String(index));
+ history.replaceState(null,"","?story="+encodeURIComponent(activeStory.slug)+"&chapter="+index);
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+$("#previous-chapter").addEventListener("click",()=>showChapter(activeChapter-1));
+$("#next-chapter").addEventListener("click",()=>showChapter(activeChapter+1));
+$("#back-to-library").addEventListener("click",()=>{activeStory=null;$("#reader").style.display="none";$("#library").style.display="block";history.replaceState(null,"",location.pathname);});
+async function init(){
+ try{const r=await fetch("./content/stories.json",{cache:"no-store"});if(!r.ok)throw new Error("Story catalogue unavailable");const data=await r.json();library=data.stories||[];renderLibrary();
+ const params=new URLSearchParams(location.search);const slug=params.get("story");if(slug){const story=library.find(s=>s.slug===slug);if(story){await openStory(story);const ch=Number(params.get("chapter")||0);if(ch)await showChapter(ch);}}
+ }catch(e){$("#story-count").textContent="Library unavailable";$("#story-grid").innerHTML='<div class="empty" style="grid-column:1/-1"><h3>Could not load the story shelf.</h3><p>Please check that content/stories.json is valid JSON in GitHub.</p></div>';}
+}
+init();
+</script></body></html>
